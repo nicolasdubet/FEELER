@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_151257) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+
   create_table "brands", force: :cascade do |t|
     t.string "pseudo"
     t.string "first_name"
