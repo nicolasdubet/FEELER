@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_145526) do
+ActiveRecord::Schema.define(version: 2021_05_24_150745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.string "domain"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "brands", force: :cascade do |t|
     t.string "pseudo"
@@ -26,4 +33,20 @@ ActiveRecord::Schema.define(version: 2021_05_24_145526) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "influencers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "pseudo"
+    t.integer "numberoffollower"
+    t.string "caracteristic"
+    t.integer "age"
+    t.string "language"
+    t.bigint "activity_id", null: false
+    t.string "sex"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activity_id"], name: "index_influencers_on_activity_id"
+  end
+
+  add_foreign_key "influencers", "activities"
 end
