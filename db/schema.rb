@@ -12,6 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2021_05_24_151257) do
 
+
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_151257) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
     t.text "brief"
@@ -48,4 +51,22 @@ ActiveRecord::Schema.define(version: 2021_05_24_151257) do
 
   add_foreign_key "campaigns", "activities"
   add_foreign_key "campaigns", "brands"
+
+  create_table "influencers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "pseudo"
+    t.integer "numberoffollower"
+    t.string "caracteristic"
+    t.integer "age"
+    t.string "language"
+    t.bigint "activity_id", null: false
+    t.string "sex"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activity_id"], name: "index_influencers_on_activity_id"
+  end
+
+  add_foreign_key "influencers", "activities"
+
 end
