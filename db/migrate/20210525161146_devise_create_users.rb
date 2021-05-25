@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class DeviseCreateInfluencers < ActiveRecord::Migration[6.0]
+class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
-    create_table :influencers do |t|
+    create_table :users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -32,21 +32,13 @@ class DeviseCreateInfluencers < ActiveRecord::Migration[6.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.string :first_name
-      t.string :last_name
-      t.string :pseudo
-      t.integer :number_of_follower
-      t.integer :age
-      t.string :language
-      t.references :activity, null: false, foreign_key: true
-      t.string :sex
-        
+
       t.timestamps null: false
     end
 
-    add_index :influencers, :email,                unique: true
-    add_index :influencers, :reset_password_token, unique: true
-    # add_index :influencers, :confirmation_token,   unique: true
-    # add_index :influencers, :unlock_token,         unique: true
+    add_index :users, :email,                unique: true
+    add_index :users, :reset_password_token, unique: true
+    # add_index :users, :confirmation_token,   unique: true
+    # add_index :users, :unlock_token,         unique: true
   end
 end
