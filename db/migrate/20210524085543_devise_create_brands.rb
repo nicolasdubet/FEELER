@@ -36,6 +36,8 @@ class DeviseCreateBrands < ActiveRecord::Migration[6.0]
       t.string :first_name
       t.string :last_name
       t.string :brand_name
+      t.integer :size
+      t.string :category
 
       t.timestamps null: false
     end
