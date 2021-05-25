@@ -1,12 +1,11 @@
 class CampaignsController < ApplicationController
 
-    def new 
-        @brands = @brands.find(params[:id])
+    def new
         @campaign = Campaign.new
 
     end
 
-    def create 
+    def create
         @campaign = Campaign.new(campaign_params)
     end
 
