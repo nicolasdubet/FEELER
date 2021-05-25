@@ -36,7 +36,6 @@ class DeviseCreateInfluencers < ActiveRecord::Migration[6.0]
       t.string :last_name
       t.string :pseudo
       t.integer :number_of_follower
-      t.string :caracteristic
       t.integer :age
       t.string :language
       t.references :activity, null: false, foreign_key: true
