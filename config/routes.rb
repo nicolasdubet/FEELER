@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+
+  devise_for :influencers
+
   devise_for :brands
+
   root to: 'pages#home'
 
   resources :influencers, only: [:index, :show, ] do
