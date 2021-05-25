@@ -64,8 +64,13 @@ ActiveRecord::Schema.define(version: 2021_05_25_085633) do
     t.string "caracteristic"
     t.integer "age"
     t.string "language"
+<<<<<<< HEAD
     t.string "sex"
     t.bigint "activity_id", null: false
+=======
+    t.bigint "activity_id", null: false
+    t.string "sex"
+>>>>>>> bcff3c46a0ff711b26ad76dd5843f1526140bc85
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["activity_id"], name: "index_influencers_on_activity_id"

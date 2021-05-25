@@ -41,7 +41,6 @@ class DeviseCreateInfluencers < ActiveRecord::Migration[6.0]
       t.string :language
       t.string :sex
       t.references :activity, null: false, foreign_key: true
-
       t.timestamps null: false
     end
 
