@@ -5,7 +5,7 @@ class Influencer < ApplicationRecord
   validates :pseudo, presence:, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :numberoffollower, presence: true
+  validates :number_of_follower, presence: true
   validates :caracteristic, presence: true
   validates :age, presence: true
   validates :language, presence: true
