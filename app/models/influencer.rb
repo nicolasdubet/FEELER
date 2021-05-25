@@ -4,7 +4,7 @@ class Influencer < ApplicationRecord
   has_many :activities
   has_many :matches
   
-  validates :pseudo, presence:, uniqueness: true
+  validates :pseudo, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :number_of_follower, presence: true

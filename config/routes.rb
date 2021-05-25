@@ -6,13 +6,12 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :influencers, only: [:index, :show, ] do
-    resources :matches, only: :new
+  resources :influencers, only: [:index, :show] do
+    resources :matches, only: [:new, :create]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :influencers
-  resources :brands
-  resources :campaigns
-  resources :matches, only: [:create, :new :index, :show, :edit, :update]
-  resources :activities only: [:index, :show, :edit, :update]
+  resources :brands, only: [:index, :show] do
+    resources :campaigns, only: [:new, :create]
+  end
+  #resources :campaign, only: :destroy
 end
