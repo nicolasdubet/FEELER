@@ -1,5 +1,6 @@
 class Brand < ApplicationRecord
-
+  has_many :campaigns
+  has_many :influencers
   validates :pseudo, presence:, uniqueness: true
   validates :last_name, presence: true
   validates :first_name, presence: true
