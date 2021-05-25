@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_151257) do
+ActiveRecord::Schema.define(version: 2021_05_25_085633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,29 @@ ActiveRecord::Schema.define(version: 2021_05_24_151257) do
     t.index ["brand_id"], name: "index_campaigns_on_brand_id"
   end
 
+  create_table "influencers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "pseudo"
+    t.integer "number_of_follower"
+    t.string "caracteristic"
+    t.integer "age"
+    t.string "language"
+    t.bigint "activity_id", null: false
+    t.string "sex"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activity_id"], name: "index_influencers_on_activity_id"
+    t.index ["email"], name: "index_influencers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_influencers_on_reset_password_token", unique: true
+  end
+
   add_foreign_key "campaigns", "activities"
   add_foreign_key "campaigns", "brands"
+  add_foreign_key "influencers", "activities"
 end

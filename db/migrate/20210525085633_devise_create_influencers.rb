@@ -39,10 +39,9 @@ class DeviseCreateInfluencers < ActiveRecord::Migration[6.0]
       t.string :caracteristic
       t.integer :age
       t.string :language
-      t.references :activity 
-      t.string :sex
       t.references :activity, null: false, foreign_key: true
-      
+      t.string :sex
+        
       t.timestamps null: false
     end
 
