@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_25_085633) do
+ActiveRecord::Schema.define(version: 2021_05_25_150812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2021_05_25_085633) do
     t.string "first_name"
     t.string "last_name"
     t.string "brand_name"
+    t.integer "size"
+    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_brands_on_email", unique: true
@@ -61,11 +63,10 @@ ActiveRecord::Schema.define(version: 2021_05_25_085633) do
     t.string "last_name"
     t.string "pseudo"
     t.integer "number_of_follower"
-    t.string "caracteristic"
     t.integer "age"
     t.string "language"
-    t.string "sex"
     t.bigint "activity_id", null: false
+    t.string "sex"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["activity_id"], name: "index_influencers_on_activity_id"
@@ -73,7 +74,19 @@ ActiveRecord::Schema.define(version: 2021_05_25_085633) do
     t.index ["reset_password_token"], name: "index_influencers_on_reset_password_token", unique: true
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.bigint "influencer_id", null: false
+    t.bigint "campaign_id", null: false
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["campaign_id"], name: "index_matches_on_campaign_id"
+    t.index ["influencer_id"], name: "index_matches_on_influencer_id"
+  end
+
   add_foreign_key "campaigns", "activities"
   add_foreign_key "campaigns", "brands"
   add_foreign_key "influencers", "activities"
+  add_foreign_key "matches", "campaigns"
+  add_foreign_key "matches", "influencers"
 end

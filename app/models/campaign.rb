@@ -1,6 +1,6 @@
 class Campaign < ApplicationRecord
-  belongs_to :brands
-  belongs_to :activities
+  belongs_to :brand
+  belongs_to :activity
   has_many :matches
   
   validates :name, presence: true
