@@ -1,2 +1,9 @@
 class Brand < ApplicationRecord
+  validates :pseudo, presence:, uniqueness: true
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :brand_name, presence:, uniqueness: true
+  validates :size, presence: true
+  validates :category, presence: true
+
 end
