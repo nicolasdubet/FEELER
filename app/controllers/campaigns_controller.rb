@@ -1,15 +1,22 @@
 class CampaignsController < ApplicationController
+    before_action :set_brand
 
 
+
+    def index
+        @campaigns = Campaign.all
+        
+    end
 
     def new 
-        raise
-        @brand = Brand.find(params[:id])
+        @campaign = Campaign.new
     end
 
     def create 
        @campaign = Campaign.new(campaign_params)
-       @campaign.Brand.find(params[:id])
+       @campaign.brand = set_brand
+       @campaign.save!
+       redirect_to brand_campaigns_path(@brand)
     end
    
 
@@ -20,7 +27,7 @@ class CampaignsController < ApplicationController
 
 
     def campaign_params
-        params.permit(:campaign).require(:content)
+        params.require(:campaign).permit(:name, :brief, :country_code, :activity_id, :language, :start_date, :end_date )
     end
 
     
