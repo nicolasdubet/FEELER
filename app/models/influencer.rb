@@ -9,4 +9,5 @@ class Influencer < ApplicationRecord
   validates :language, presence: true
   validates :age, presence: true
   validates :sex, presence: true
+
 end
