@@ -1,7 +1,4 @@
 class CampaignsController < ApplicationController
-    before_action :set_brand
-
-
 
     def index
         @campaigns = Campaign.all
@@ -21,9 +18,7 @@ class CampaignsController < ApplicationController
    
 
  private
-    def set_brand
-        @brand = Brand.find(params[:brand_id])
-    end
+
 
 
     def campaign_params
