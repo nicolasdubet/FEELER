@@ -7,6 +7,7 @@ class CreateCampaigns < ActiveRecord::Migration[6.0]
       t.references :activity, null: false, foreign_key: true
       t.string :language
 
+      
       t.timestamps
     end
   end

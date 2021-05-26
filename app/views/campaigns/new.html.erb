@@ -1,0 +1,10 @@
+<%= simple_form_for [@brand, @campaign] do |f| %>
+<%= f.input :name %>
+<%= f.input :brief %>
+<%= f.input :country_code, label:"Country" %>
+<%= f.association :activity %>
+<%= f.input :language %>
+<%= f.input :start_date %>
+<%= f.input :end_date %>
+<%= f.submit "New campaign" %>
+<% end %>
