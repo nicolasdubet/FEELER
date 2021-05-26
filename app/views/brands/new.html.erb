@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
+      <h2>Create brand's profile</h2>
+      <%= simple_form_for(@brand) do |f| %>
+        <div class="form-inputs">
+
+          <%= f.input :brand_name, label: 'what is your brand?' %>
+          <%= f.input :pseudo, label: 'what is your pseudo?'   %>
+          <%= f.input :firsname, label: 'what is your first name?'  %>
+          <%= f.input :lastname, label: 'what is your last name?' %>
+          <%= f.input :size, placeholder: "number of employee", label: 'How many employees do you have?'    %>
+          <%= f.input :category, collection: ["sport", "fashion"]%>
+
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "create", class: "btn btn-primary" %>
+        </div>
+
+      <% end %>
+      </div>
+  </div>
+</div>
