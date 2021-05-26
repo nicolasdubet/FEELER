@@ -1,1 +1,31 @@
-<h1>All influencers</h1>
+
+<h1 class="indexinfluencerstitle">Discover all influencers</h1>
+
+<div class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-4 is-offset-4" id="flex">
+        <% @influencers.each do |influencer| %>
+            <div class="card">
+            <div class="header">
+                <div class="avatar">
+                <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="user-meta has-text-centered">
+                <h3 class="username"><%= influencer.firstname %> <%= influencer.lastname %></h3>
+                <h5 class="position"><strong>Activity:</strong> <%= influencer.activity.name %></h5>
+                <h5 class="position"><strong>Nb. of followers:</strong> <%= influencer.number_of_followers %></h5>
+                </div>
+                <div class="action has-text-centered">
+                <a href="#" class="button is-small">View profile</a>
+                </div>
+            </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
