@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
+
+      <h2>Create your profil </h2>
+
+      <%= simple_form_for(@influencer) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :firstname,
+                      label: 'What is your first name ?'%>
+          <%= f.input :lastname,
+                      label: 'What is your last name ?'%>
+          <%= f.input :pseudo,
+                      label: "Choose a pseudo"%>
+          <%= f.input :number_of_followers,
+                      label: 'How many followers do you have ?'%>
+          <%= f.input :language,
+                      label: "What language do you speak ?"%>
+          <%= f.input :age,
+                      collection: 18..99,
+                      label: "How old are you ?"%>
+          <%= f.input :sex,
+                      collection: ["woman", "man", "no binary person"],
+                      label: "I am a..."%>
+          <%= f.association :activity%>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Log in", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
