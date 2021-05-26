@@ -109,4 +109,38 @@ body {
   }
 }
 
+
+.card-campaign {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 300px;
+}
+
+
+.card-campaign > img {
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+}
+
+
+
+.card-campaign p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-campaign .card-campaign-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+
+
 //--------------END InfluencersIndexCard----------------//
