@@ -1,14 +1,19 @@
 <h1>All campaigns</h1>
- <% @campaigns.each do  |campaign| %>
-    <div class="cards">>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        
-                <p><%= campaign.name %></p>
-                <p><%= campaign.activity_id%></p>
-                <p><%= campaign.start_date%></p>
-                <p><%= campaign.end_date%></p>
-      </div>
-    </div>
-<% end %>
-
+<div class="container">
+  <div class="row">
+    <% @campaigns.each do  |campaign| %>
+      <div class="col-4">
+        <div class="card-campaign">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />     
+          <div class="card-camapaign-infos">
+            <p><%= campaign.name %></p>
+            <p><%= campaign.activity_id%></p>
+            <p><%= campaign.start_date%></p>
+            <p><%= campaign.end_date%></p>
+          </div>
+        </div>
+      </div>  
+    <% end %>
+  </div>
+</div>
 
