@@ -2,6 +2,9 @@ class Influencer < ApplicationRecord
   belongs_to :user
   belongs_to :activity
 
+  LANGUAGE = ["english","french","spanish"]
+  FOLLOWERS = [{range: "1-1000", id: 1},{range: "1000-10000", id: 2}]
+
   validates :firstname, presence: true
   validates :lastname, presence: true
   validates :pseudo, presence: true, uniqueness: true
