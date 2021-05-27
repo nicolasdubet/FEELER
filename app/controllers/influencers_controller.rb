@@ -12,7 +12,7 @@ class InfluencersController < ApplicationController
     @influencer = Influencer.new(influencer_params)
     @influencer.user = current_user
     if @influencer.save
-      redirect_to root_path
+      redirect_to campaigns_path
     else
       render :new
     end
