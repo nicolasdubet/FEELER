@@ -3,7 +3,7 @@ class InfluencersController < ApplicationController
   def index
     @influencers = Influencer.all
   end
-  
+
   def new
     @influencer = Influencer.new
   end
@@ -16,6 +16,12 @@ class InfluencersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @influencer = Influencer.find(params[:id])
+    #@booking = Booking.new
+    @influencers = Influencer.all
   end
 
   private
