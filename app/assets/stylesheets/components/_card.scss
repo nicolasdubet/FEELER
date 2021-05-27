@@ -2,7 +2,7 @@
 
 //--------------START InfluencersIndexCard----------------//
 
-$primary: #7F00FF;
+$primary: #0077b6;
 $secondary: #00D1B2;
 $section: #ededed;
 $muted: #999;
@@ -15,18 +15,28 @@ body {
 
 .columns {
   margin-top: 0;
+  max-width: 1200px;
+  margin: 16px auto;
+  padding-bottom: 52px;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .section {
   background-color: $section;
   min-height: 100vh;
   position: relative;
-  .card {
+  margin-top: -20px;
+  padding-top: 36px;
+  .infcard {
     border-radius: 6px;
     overflow:hidden;
     max-width: 300px;
     max-height: 380px;
     margin: 0 auto;
+    background-color: white;
+    width: 100%;
     .header {
       height: 120px;
       background: $primary;
@@ -74,6 +84,7 @@ body {
         transition: opacity .3s;
         &:hover {
           opacity: 0.7;
+          text-decoration: none;
         }
       }
     }

@@ -2,6 +2,15 @@ class InfluencersController < ApplicationController
 
   def index
     @influencers = Influencer.all
+    if params[:number_of_followers].present?
+      if params[:number_of_followers] = 1
+      @influencers = @influencers.where("number_of_followers < 1000", params[:number_of_followers])
+      elsif params[:number_of_followers] = 2
+        @influencers = @influencers.where("number_of_followers > 1000", params[:number_of_followers])
+      end
+    elsif params[:language].present?
+      @influencers = @influencers.where(language: params[:language])
+    end
   end
   
   def new
