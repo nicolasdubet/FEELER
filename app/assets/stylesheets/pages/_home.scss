@@ -1,20 +1,79 @@
 // Specific CSS for your home-page
   
   
-  .btn-gradient {
-    color: white;
-    padding: 8px 24px;
-    border-radius: 4px;
-    font-weight: bold;
-    background: linear-gradient(#167FFB, #0F60C4);
-    transition: background 0.3s ease;
-    border: 1px solid #0F60C4;
-  }
-  
-  .btn-gradient:hover {
-    background: linear-gradient(#147EFF, #0F67DA);
-    color: white;
-  }
-  
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+  margin: 30px
+}
 
+.btn-gradient:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
+  color: white;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  text-align: center;
+  height: 500px
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.header {
+  position: relative;
+}
   
+.top-header-content {
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header img {
+  opacity: 0.2;
+}
+
+#carouselExampleIndicators img {
+
+  max-height: 400px;
+  object-fit: cover;
+
+}
