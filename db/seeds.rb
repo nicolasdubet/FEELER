@@ -17,8 +17,8 @@ puts "destroy all a"
 user1 = User.create!(email: "louis.dupont@gmail.com", password: "password")
 user2 = User.create!(email: "krismendy@gmail.com", password: "password")
 user3 = User.create!(email: "charles.t@gmail.com", password: "password")
-act1 = Activity.create!(name: "act1", domain: "dom1")
-act2 = Activity.create!(name: "act2", domain: "dom2")
+act1 = Activity.create!(name: "foot", domain: "sport")
+act2 = Activity.create!(name: "pétanque", domain: "fashion")
 act3 = Activity.create!(name: "act3", domain: "dom3")
 puts "create #1 influencer..."
 
@@ -31,7 +31,8 @@ influencer = Influencer.create!(
     age: 28,
     sex: "male",
     activity_id: act1.id,
-    user_id: user1.id
+    user_id: user1.id,
+    bio: "hellooooooo my name is John Do"
     )
 
 puts "done"
@@ -47,7 +48,8 @@ influencer = Influencer.create!(
     age: 40,
     sex: "male",
     activity_id: act2.id,
-    user_id: user2.id
+    user_id: user2.id,
+    bio: "hellooooooo my name is Kobe et I'm mortal"
     )
 
 puts "done"
@@ -63,7 +65,8 @@ influencer = Influencer.create!(
     age: 42,
     sex: "male",
     activity_id: act3.id,
-    user_id: user3.id
+    user_id: user3.id,
+    bio: "hellooooooo my name is Kobe et I'm a mortal"
     )
 
 puts "done"
