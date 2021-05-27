@@ -1,19 +1,19 @@
 <div class="container" id="grid_show">
 
- <h2 class="show-h1"><%= @influencer.firstname %> <%= @influencer.lastname %></h2>
+ <div class="titleshow" ><%= @influencer.firstname %> <%= @influencer.lastname %></div>
 
   <%# partie de gauche de la show : noms, followers et location %>
   <div class="row">
     <div class="col-4 influencer_summary">
-      <img src="https://i1.wp.com/www.starmag.com/wp-content/uploads/2021/02/deces-de-kobe-bryant-le-pilote-mis-en-cause-dans-les-conclusions-de-l-enquete.jpg?resize=980%2C675&ssl=1" width="30%"/></br>
-      <strong><%= @influencer.pseudo %></strong></br>
-      Followers : <%= @influencer.number_of_followers %></br>
-      Language : <%= @influencer.language %> </br>
-      <a class="btn btn-flat" href="#">❤️</a>
+      <img class="infl_photo" src="https://i1.wp.com/www.starmag.com/wp-content/uploads/2021/02/deces-de-kobe-bryant-le-pilote-mis-en-cause-dans-les-conclusions-de-l-enquete.jpg?resize=980%2C675&ssl=1" width="30%"/></br>
+      <div class="pseudoshow"><%= @influencer.pseudo %></div>
+<i class="fas fa-users"></i>  <%= @influencer.number_of_followers %></br>
+<i class="fas fa-globe-europe"></i> <%= @influencer.language %> </br>
+      <a class="btn" href="#">❤️</a>
     </div>
 
     <div class="col-6">
-      Activities : <%= @influencer.activity.name %></br>
+      <i class="fas fa-hashtag"></i> <%= @influencer.activity.name %></br>
 
       <%= @influencer.bio %>
     </div>
