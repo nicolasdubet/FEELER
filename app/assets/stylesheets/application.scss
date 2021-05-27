@@ -11,3 +11,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.container {
+  min-height: calc(100vh - 139px);
+}
+
+
+#grid_show {
+  display:"inline-flex";
+}
+
+.influencer_summary {
+  border-right: 1px solid lightgray;
+}
