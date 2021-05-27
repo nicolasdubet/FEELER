@@ -30,12 +30,15 @@
             <div class="avatar">
               <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
             </div>
-          </div>
-          <div class="card-body">
-            <div class="user-meta has-text-centered">
-              <h3 class="username"><%= influencer.firstname %> <%= influencer.lastname %></h3>
-              <h5 class="position"><strong>Activity:</strong> <%= influencer.activity.name %></h5>
-              <h5 class="position"><strong>Nb. of followers:</strong> <%= influencer.number_of_followers %></h5>
+            <div class="card-body">
+                <div class="user-meta has-text-centered">
+                <h3 class="username"><%= influencer.firstname %> <%= influencer.lastname %></h3>
+                <h5 class="position"><strong>Activity:</strong> <%= influencer.activity.name %></h5>
+                <h5 class="position"><strong>Nb. of followers:</strong> <%= influencer.number_of_followers %></h5>
+                </div>
+                <div class="action has-text-centered">
+                <a href="#" class="button is-small">View profile<%= link_to "Forgot your password?", influencer_path(resource_name) %></a>
+                </div>
             </div>
             <div class="action has-text-centered">
               <%= link_to "View profile", influencer_path(influencer), class:"button is-small"%> 

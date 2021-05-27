@@ -152,6 +152,12 @@ body {
   position: relative;
 }
 
+.cards_home {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
 
 
 //--------------END InfluencersIndexCard----------------//
