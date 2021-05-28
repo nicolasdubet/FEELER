@@ -64,7 +64,7 @@ influencer = Influencer.new(
     user_id: user2.id,
     bio: "Hi i'm Michael, form Irland. I like beers and play soccer a lot. I'm willing to work with a brand within sport industry."
     )
-file = URI.open("https://images.unsplash.com/photo-1601699241249-df8e60e73d30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80")
+file = URI.open("https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80")
 influencer.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 influencer.save!
 
@@ -74,7 +74,7 @@ puts "create #3 influencer..."
 
 influencer = Influencer.new(
     firstname: "John",
-    lastname: "Legend",
+    lastname: "Moore",
     pseudo: "The man",
     number_of_followers: 800000,
     language: "english",
@@ -84,7 +84,7 @@ influencer = Influencer.new(
     user_id: user3.id,
     bio: "Hi i'm John, the famous singer. I'm willing to work with any company in music industry."
     )
-    file = URI.open("https://images.unsplash.com/photo-1601699241249-df8e60e73d30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80")
+    file = URI.open("https://images.unsplash.com/photo-1551644480-685dae9e21a9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80")
     influencer.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer.save!
     
@@ -104,7 +104,7 @@ influencer = Influencer.new(
     user_id: user3.id,
     bio: "Hello ! I'm Johanna Dupont, a french singer from Britanny. Feel free to contact me should you need any visibility in Britanny area."
     )
-    file = URI.open("https://images.unsplash.com/photo-1601699241249-df8e60e73d30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80")
+    file = URI.open("https://images.unsplash.com/photo-1593937799405-f5da790f5b04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80")
     influencer.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer.save!
     
@@ -124,30 +124,11 @@ influencer = Influencer.new(
     user_id: user3.id,
     bio: "Hi there ! I'm Pierre from Saint-Maur-des-Fossés. I'm a french soccer and an active Instagram user. Feel free to contact me should you have any project for your brand."
     )
-    file = URI.open("https://images.unsplash.com/photo-1601699241249-df8e60e73d30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80")
+    file = URI.open("https://images.unsplash.com/photo-1564403243064-ea34df983f7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80")
     influencer.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer.save!
     
 puts "done"
 
 
-puts "create #6 influencer..."
-
-influencer = Influencer.new(
-    firstname: "Marcel",
-    lastname: "Ducasse",
-    pseudo: "@marcelo",
-    number_of_followers: 5000,
-    language: "french",
-    age: 44,
-    sex: "male",
-    activity_id: act3.id,
-    user_id: user3.id,
-    bio: "Hi i'm Marcel from Marseille. I'm living in Le panier area, closed to Le Vieux Port. I'm available anytime feel free to contact me!"
-    )
-    file = URI.open("https://images.unsplash.com/photo-1601699241249-df8e60e73d30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80")
-    influencer.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-    influencer.save!
-    
-puts "done"
 #-------------brands ----------------
