@@ -28,7 +28,7 @@
             <div class="infheader">
               <div class="infavatar">
                  <% if influencer.photo.attached? %>
-                   <%= cl_image_tag influencer.photo.key, crop: :fill %>
+                   <%= cl_image_tag influencer.photo.key, width:170, crop: :fill %>
                   <% else %>
                    <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
                  <% end %>                
@@ -58,7 +58,7 @@
                         <div class="modal-body">
                            <div class="row">
                               <div class="col-5 influencer_summary">
-                                <img class="infl_photo" src="https://i1.wp.com/www.starmag.com/wp-content/uploads/2021/02/deces-de-kobe-bryant-le-pilote-mis-en-cause-dans-les-conclusions-de-l-enquete.jpg?resize=980%2C675&ssl=1" width="30%"/></br>
+                                      <%= cl_image_tag influencer.photo.key, class:"infl_photo_show", width:200, crop: :fill %>
                                 <div class="pseudoshow"><%= influencer.pseudo %></div>
                                   <i class="fas fa-users"></i>  <%= influencer.number_of_followers %></br>
                                   <i class="fas fa-globe-europe"></i> <%= influencer.language %> </br>
