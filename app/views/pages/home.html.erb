@@ -37,15 +37,3 @@
     </a>
   </div>
 </div>
-
-<%# search form %>
-<h3 style="margin-top: revert;"> Top 3 tents of the month </h3>
-<div class="cardsindex">
-  <% @influencers.first(3).each do |tent| %>
-    <div class="cardsflex">
-  <div class="cardtentindexlist" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path tent.photo.key %>')">
-      <%= link_to tent.name, tent_path(tent)%>
-    </div>
-  </div>
-  <% end %>
-</div>
