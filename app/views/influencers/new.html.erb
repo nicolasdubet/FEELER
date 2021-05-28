@@ -28,6 +28,8 @@
                           collection: ["woman", "man", "no binary person"],
                           label: "I am a..."%>
               <%= f.association :activity%>
+              <%= f.input :photo, as: :file %>
+
             </div>
             <div class="form-actions">
               <%= f.button :submit, "Log in", class: "btn btn-success" %>
