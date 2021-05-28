@@ -36,7 +36,11 @@
                   <h5 class="position"><strong>Nb. of followers:</strong> <br> <%= influencer.number_of_followers %></h5>
                   </div>
                 <div class="action has-text-centered">
+
+                <a href="#" class="button is-small">View profile<%= link_to "Forgot your password?", influencer_path(influencer) %></a>
+
                   <%= link_to "View profile", influencer_path(influencer), class:"button is-small"%> 
+
                 </div>
               </div>
             </div>
