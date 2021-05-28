@@ -1,6 +1,7 @@
 class InfluencersController < ApplicationController
 
   def index
+
     @influencers = Influencer.all
     if params[:number_of_followers].present?
       if params[:number_of_followers] = 1

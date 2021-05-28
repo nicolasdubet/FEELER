@@ -27,7 +27,11 @@
           <div class="infcard">
             <div class="infheader">
               <div class="infavatar">
-                <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
+                 <% if influencer.photo.attached? %>
+                   <%= cl_image_tag influencer.photo.key, crop: :fill %>
+                  <% else %>
+                   <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
+                 <% end %>                
               </div>
               <div class="card-body">
                   <div class="user-meta has-text-centered">
