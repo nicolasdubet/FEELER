@@ -31,7 +31,7 @@
                    <%= cl_image_tag influencer.photo.key, width:170, crop: :fill %>
                   <% else %>
                    <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
-                 <% end %>                
+                 <% end %>
               </div>
               <div class="card-body">
                   <div class="user-meta has-text-centered">
@@ -58,7 +58,13 @@
                         <div class="modal-body">
                            <div class="row">
                               <div class="col-5 influencer_summary">
-                                      <%= cl_image_tag influencer.photo.key, class:"infl_photo_show", width:200, crop: :fill %>
+                                <% if influencer.photo.attached? %>
+                                  <%= cl_image_tag influencer.photo.key, class:"infl_photo_show", width:200, crop: :fill %>
+                                <% else %>
+                                  <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
+                                <% end %>
+
+
                                 <div class="pseudoshow"><%= influencer.pseudo %></div>
                                   <i class="fas fa-users"></i>  <%= influencer.number_of_followers %></br>
                                   <i class="fas fa-globe-europe"></i> <%= influencer.language %> </br>

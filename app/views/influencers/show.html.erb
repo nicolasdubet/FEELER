@@ -5,7 +5,12 @@
   <%# partie de gauche de la show : noms, followers et location %>
   <div class="row">
     <div class="col-4 influencer_summary">
+
+    <% if @influencer.photo.attached? %>
       <%= cl_image_tag @influencer.photo.key, class:"infl_photo_show", width:200, crop: :fill %>
+    <% else %>
+      <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="" class="infl_photo_show">
+    <% end %>
       <div class="pseudoshow"><%= @influencer.pseudo %></div>
 <i class="fas fa-users"></i>  <%= @influencer.number_of_followers %></br>
 <i class="fas fa-globe-europe"></i> <%= @influencer.language %> </br>
