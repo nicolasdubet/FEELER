@@ -10,7 +10,7 @@
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
   margin: 30px;
-  margin-top: 450px;
+
 }
 
 .btn-succes:hover {
@@ -64,8 +64,9 @@
   position: absolute;
   z-index: 1;
   width: 100%;
-  top: 50%;
+  top: 200px;
   transform: translateY(-50%);
+  color:yellow
 }
 
 
@@ -76,3 +77,4 @@
   object-fit: cover;
 
 }
+
