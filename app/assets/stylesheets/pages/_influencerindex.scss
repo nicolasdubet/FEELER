@@ -16,6 +16,9 @@
   right: 8px;
 }
 
+.btn-lg {
+  border-radius: 24px;
+}
 .search-form-control .form-control {
   height: 3.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
@@ -29,6 +32,12 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
+#language, #number_of_followers{
+  border-radius: 24px;
+  margin-bottom: 10px;
+  height: 32px;
+}
+
 //-----ENDsearch------
 
 
@@ -39,10 +48,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  .container {
+  .infcontainer {
     text-align: left;
     color: white;
     padding-top: 183px;
+    padding-left: 37px;
+    padding-right: 37px;
   }
 }
 
