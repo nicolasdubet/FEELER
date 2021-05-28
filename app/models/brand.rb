@@ -1,6 +1,7 @@
 class Brand < ApplicationRecord
   has_many :campaigns
   belongs_to :user
+  has_one_attached :photo
 
   validates :firsname, presence: true
   validates :lastname, presence: true
