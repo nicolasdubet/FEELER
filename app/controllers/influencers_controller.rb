@@ -4,7 +4,7 @@ class InfluencersController < ApplicationController
     @influencers = Influencer.all
     if params[:number_of_followers].present?
       if params[:number_of_followers] = 1
-      @influencers = @influencers.where("number_of_followers < 1000", params[:number_of_followers])
+        @influencers = @influencers.where("number_of_followers < 1000", params[:number_of_followers])
       elsif params[:number_of_followers] = 2
         @influencers = @influencers.where("1001 < number_of_followers < 10000", params[:number_of_followers])
       elsif params[:number_of_followers] = 3
@@ -21,6 +21,7 @@ class InfluencersController < ApplicationController
     end
   end
 
+  
   def new
     @influencer = Influencer.new
   end
@@ -44,6 +45,6 @@ class InfluencersController < ApplicationController
   private
 
   def influencer_params
-    params.require(:influencer).permit(:firstname, :lastname, :pseudo, :number_of_followers, :language, :age, :sex, :activity_id)
+    params.require(:influencer).permit(:firstname, :lastname, :pseudo, :number_of_followers, :language, :age, :sex, :activity_id, :photo)
   end
 end
