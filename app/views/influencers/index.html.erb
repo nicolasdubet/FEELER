@@ -1,52 +1,47 @@
-
-<div class="infbanner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1576445379409-8b357ed9ae91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80);">
-  <div class="container">
-    <h1>Discover the <strong>right influencer</strong></h1>
-    <h1>that fits <strong>your need</strong></h1>
-      <div class="influenceradvancefilter">
-        <%= form_tag influencers_path, method: :get do %>
-          <%= select_tag :number_of_followers,
-          options_for_select(Influencer::FOLLOWERS.collect{|x| [x[:range], x[:id]]}, selected: params[:number_of_followers]),
-          include_blank: "Followers"%>
-          <%= select_tag :language,
-          options_for_select(Influencer::LANGUAGE, selected: params[:language]),
-          include_blank: "Language"%>
-          <%= submit_tag "search", class: "btn btn-light btn-lg btn-block"%>
-        <% end %>
-      </div>
-    <%# <p>Change your life and learn to code at one of our campuses around the world.</p> %>
-  </div>
-</div>
-
-
-
-
-<div class="section">
-  <div class="container">
-    <div class="columns is-4 is-offset-4">
-      <% @influencers.each do |influencer| %>
-        <div class="infcard">
-          <div class="header">
-            <div class="avatar">
-              <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
-            </div>
-            <div class="card-body">
-                <div class="user-meta has-text-centered">
-                <h3 class="username"><%= influencer.firstname %> <%= influencer.lastname %></h3>
-                <h5 class="position"><strong>Activity:</strong> <%= influencer.activity.name %></h5>
-                <h5 class="position"><strong>Nb. of followers:</strong> <%= influencer.number_of_followers %></h5>
-                </div>
-                <div class="action has-text-centered">
-                <a href="#" class="button is-small">View profile<%= link_to "Forgot your password?", influencer_path(resource_name) %></a>
-                </div>
-            </div>
-            <div class="action has-text-centered">
-              <%= link_to "View profile", influencer_path(influencer), class:"button is-small"%> 
-            </div>
-          </div>
+<div class="influencers">
+  <div class="infbanner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1576445379409-8b357ed9ae91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80);">
+    <div class="infcontainer">
+      <h1>Discover the <strong>right influencer</strong></h1>
+      <h1>that fits <strong>your need</strong></h1>
+        <div class="influenceradvancefilter">
+          <%= form_tag influencers_path, method: :get do %>
+            <%= select_tag :number_of_followers,
+            options_for_select(Influencer::FOLLOWERS.collect{|x| [x[:range], x[:id]]}, selected: params[:number_of_followers]),
+            include_blank: "Followers"%>
+            <%= select_tag :language,
+            options_for_select(Influencer::LANGUAGE, selected: params[:language]),
+            include_blank: "Language"%>
+            <%= submit_tag "search", class: "btn btn-light btn-lg btn-block"%>
+          <% end %>
         </div>
-      <% end %>
+      <%# <p>Change your life and learn to code at one of our campuses around the world.</p> %>
     </div>
   </div>
-</div>
 
+
+
+
+  <div class="infsection">
+      <div class="infcolumns is-4 is-offset-4">
+        <% @influencers.each do |influencer| %>
+          <div class="infcard">
+            <div class="infheader">
+              <div class="infavatar">
+                <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
+              </div>
+              <div class="card-body">
+                  <div class="user-meta has-text-centered">
+                  <h3 class="username"><%= influencer.firstname %> <%= influencer.lastname %></h3>
+                  <h5 class="position"><strong>Activity:</strong> <br> <%= influencer.activity.name %></h5>
+                  <h5 class="position"><strong>Nb. of followers:</strong> <br> <%= influencer.number_of_followers %></h5>
+                  </div>
+                <div class="action has-text-centered">
+                  <%= link_to "View profile", influencer_path(influencer), class:"button is-small"%> 
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
