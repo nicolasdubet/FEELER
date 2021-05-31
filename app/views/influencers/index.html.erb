@@ -14,7 +14,6 @@
             <%= submit_tag "search", class: "btn btn-light btn-lg btn-block"%>
           <% end %>
         </div>
-      <%# <p>Change your life and learn to code at one of our campuses around the world.</p> %>
     </div>
   </div>
 
@@ -79,11 +78,11 @@
                         </div>
                         <div class="modal-footer">
 
-                        <%= form_for(@match) do |f| %>
-                          <%= f.hidden_field :influencer_id, value: influencer.id%>
-                          <%= f.hidden_field :campaign_id, value: Brand.where(user: current_user).first.campaigns.last.id%>
-                          <%= f.submit "❤️", class: "btn btn-success" %>
-                        <% end %>
+                        <%#= form_for(@match) do |f| %>
+                          <%#= f.hidden_field :influencer_id, value: influencer.id%>
+                          <%#= f.hidden_field :campaign_id, value: Brand.where(user: current_user).first.campaigns.last.id%>
+                          <%#= f.submit "❤️", class: "btn btn-success" %>
+                        <%# end %>
                         </div>
                       </div>
                     </div>
