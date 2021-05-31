@@ -10,16 +10,5 @@ Rails.application.routes.draw do
   resources :campaigns, only: :index
   resources :matches, only: [:create, :new, :edit, :update]
 
-
-
-
-
-
-
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # resources :brands, only: [:index, :show] do
-  #   resources :campaigns, only: [:new, :create]
-  # end
-  #resources :campaign, only: :destroy
+  get "dashboard", to: "pages#dashboard", as: "dashboard"
 end
