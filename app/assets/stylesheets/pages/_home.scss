@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
-  
-  
+
+
 .btn-succes {
   color: white;
   padding: 8px 24px;
@@ -57,8 +57,22 @@
 
 .header {
   position: relative;
+  background-color: darkblue;
+  width: 100vw;
+  height: 50vh;
 }
-  
+
+.header:after {
+    content: "";
+    height: 90px;
+    left: 0;
+    bottom: -90px;
+    right: 0;
+    position: absolute;
+    background-image: linear-gradient(357deg, white 49%, darkblue 50%);
+}
+
+
 .top-header-content {
   text-align: center;
   position: absolute;
@@ -75,6 +89,5 @@
 
   max-height: 400px;
   object-fit: cover;
-
 }
 

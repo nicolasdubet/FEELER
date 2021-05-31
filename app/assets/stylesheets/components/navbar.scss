@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #F1F1F1;
+  background: darkblue;
   box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
@@ -29,12 +29,23 @@
 }
 
 .navbar h1 {
-  color:#343a40 ;
+  color: white ;
   font-family: "Work Sans", "Helvetica", "sans-serif";
   position: center;
-
 }
 
+a.nav-link {
+  color: white !important;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
+#navbarSupportedContent {
+  color: white;
+}
 
 .min-container {
   min-height: calc(100vh - 74px - 100px) ;
@@ -42,11 +53,14 @@
 
 .dropdown-menu a {
     color: #343a40;
-        margin: 3px;
-        border-radius: 25px;
+    margin: 3px;
+    border-radius: 25px;
 }
 
 .dropdown-menu a:hover {
     color: #343a40;
 
 }
+
+
+
