@@ -78,7 +78,12 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-primary" data-dismiss="modal"> ❤️ </button>
+
+                        <%= form_for(@match) do |f| %>
+                          <%= f.hidden_field :influencer_id, value: influencer.id%>
+                          <%= f.hidden_field :campaign_id, value: Brand.where(user: current_user).first.campaigns.last.id%>
+                          <%= f.submit "❤️", class: "btn btn-success" %>
+                        <% end %>
                         </div>
                       </div>
                     </div>

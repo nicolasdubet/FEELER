@@ -1,18 +1,17 @@
 class InfluencersController < ApplicationController
-
   def index
-
+    @match = Match.new
     @influencers = Influencer.all
     if params[:number_of_followers].present?
-      if params[:number_of_followers] = 1
+      if params[:number_of_followers] == 1
         @influencers = @influencers.where("number_of_followers < 1000", params[:number_of_followers])
-      elsif params[:number_of_followers] = 2
+      elsif params[:number_of_followers] == 2
         @influencers = @influencers.where("1001 < number_of_followers < 10000", params[:number_of_followers])
-      elsif params[:number_of_followers] = 3
+      elsif params[:number_of_followers] == 3
         @influencers = @influencers.where("10001 < number_of_followers < 100000", params[:number_of_followers])
-      elsif params[:number_of_followers] = 4
+      elsif params[:number_of_followers] == 4
         @influencers = @influencers.where("100001 < number_of_followers < 1000000", params[:number_of_followers])
-      elsif params[:number_of_followers] = 5
+      elsif params[:number_of_followers] == 5
         @influencers = @influencers.where("1000001 < number_of_followers < 5000000", params[:number_of_followers])
       end
     elsif params[:language].present?
@@ -22,7 +21,6 @@ class InfluencersController < ApplicationController
     end
   end
 
-  
   def new
     @influencer = Influencer.new
   end
@@ -39,8 +37,6 @@ class InfluencersController < ApplicationController
 
   def show
     @influencer = Influencer.find(params[:id])
-    #@booking = Booking.new
-    #@influencers = Influencer.all
   end
 
   private
