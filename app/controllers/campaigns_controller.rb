@@ -6,14 +6,15 @@ class CampaignsController < ApplicationController
     end
 
     def new 
+        @brand = Brand.find(params[:brand_id])
         @campaign = Campaign.new
     end
 
     def create 
        @campaign = Campaign.new(campaign_params)
-       @campaign.brand = set_brand
+       @campaign.brand = Brand.find(params[:brand_id])
        @campaign.save!
-       redirect_to brand_campaigns_path(@brand)
+       redirect_to influencers_path(@influencers)
     end
    
 
