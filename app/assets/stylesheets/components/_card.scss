@@ -170,6 +170,7 @@ $muted: #999;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+
 }
 
 .cards_home {
@@ -178,10 +179,21 @@ $muted: #999;
   grid-gap: 16px;
 }
 
+
+#card-campaign-dashboard{
+  display: flex;
+  background-color: white;
+  margin: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  .card-campaign-infos{
+    margin-left: 50px;
+    margin-top: 18px;
+  }
+}
+
 .username {
 text-align: center;
 color: black;
-
 }
 
 .position {
