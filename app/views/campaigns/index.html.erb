@@ -1,17 +1,21 @@
+<div class="text-center mt-3 mb-1" >
   <div>
     <%= link_to "New campaign", new_brand_campaign_path(Brand.find_by(user:current_user)), class:"btn btn-success"%>
   </div>
+</div>
 <h1>All campaigns</h1>
 <div class="container">
   <div class="row">
     <% @campaigns.each do  |campaign| %>
       <div class="col-4">
         <div class="card-campaign">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg"/>
+          <div class="col-4">
           <div class="card-camapaign-infos">
-            <p><%= campaign.name %></p>
-            <p><%= campaign.activity.name%></p>
-            <p><%= campaign.start_date%></p>
+            <h2><%= campaign.name %></h2>
+            <%= campaign.activity.name%></br>
+            from
+            <p><%= campaign.start_date%></p> to
             <p><%= campaign.end_date%></p>
           </div>
         </div>
