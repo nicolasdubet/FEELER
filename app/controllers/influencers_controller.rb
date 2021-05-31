@@ -2,21 +2,25 @@ class InfluencersController < ApplicationController
   def index
     @match = Match.new
     @influencers = Influencer.all
+
     if params[:number_of_followers].present?
-      if params[:number_of_followers] == 1
+      if params[:number_of_followers].to_i == 1
         @influencers = @influencers.where("number_of_followers < 1000", params[:number_of_followers])
-      elsif params[:number_of_followers] == 2
-        @influencers = @influencers.where("1001 < number_of_followers < 10000", params[:number_of_followers])
-      elsif params[:number_of_followers] == 3
-        @influencers = @influencers.where("10001 < number_of_followers < 100000", params[:number_of_followers])
-      elsif params[:number_of_followers] == 4
-        @influencers = @influencers.where("100001 < number_of_followers < 1000000", params[:number_of_followers])
-      elsif params[:number_of_followers] == 5
-        @influencers = @influencers.where("1000001 < number_of_followers < 5000000", params[:number_of_followers])
+      elsif params[:number_of_followers].to_i == 2
+        @influencers = @influencers.where(number_of_followers: 1001..10000)
+      elsif params[:number_of_followers].to_i == 3
+        @influencers = @influencers.where(number_of_followers: 10001..100000)
+      elsif params[:number_of_followers].to_i == 4
+        @influencers = @influencers.where(number_of_followers: 100001..1000000)
+      elsif params[:number_of_followers].to_i == 5
+        @influencers = @influencers.where(number_of_followers: 1000001..5000000)
       end
-    elsif params[:language].present?
+    end
+    
+    if params[:language].present?
       @influencers = @influencers.where(language: params[:language])
-    elsif params[:age].present?
+    end
+    if params[:age].present?
       @influencers = @influencers.where(age: params[:age])
     end
   end
