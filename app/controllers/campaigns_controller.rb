@@ -2,21 +2,21 @@ class CampaignsController < ApplicationController
 
     def index
         @campaigns = Campaign.all
-        
+
     end
 
-    def new 
+    def new
         @brand = Brand.find(params[:brand_id])
         @campaign = Campaign.new
     end
 
-    def create 
+    def create
        @campaign = Campaign.new(campaign_params)
        @campaign.brand = Brand.find(params[:brand_id])
        @campaign.save!
        redirect_to influencers_path(@influencers)
     end
-   
+
 
  private
 
@@ -26,5 +26,5 @@ class CampaignsController < ApplicationController
         params.require(:campaign).permit(:name, :brief, :country_code, :activity_id, :language, :start_date, :end_date )
     end
 
-    
+
 end
