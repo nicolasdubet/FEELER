@@ -36,9 +36,14 @@
 
   }
 
-  .fas {
-    color: orange;
+  .fa-search {
+    color: grey;
+    position: absolute;
+    top: 7px;
+    font-size: 25px;
+    right: 16px;
   }
+
 
   .modal-dialog {
     margin-top: 100px;
