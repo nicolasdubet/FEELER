@@ -14,7 +14,11 @@
         <%#<li class="nav-item active"> %>
 
         <li class="nav-item">
+        <% if Brand.find_by(user:current_user) == nil %>
+          <%= link_to "New brand", new_brand_path, class:"nav-link" %>
+        <% else %>
           <%= link_to "New campaign", new_brand_campaign_path(Brand.find_by(user:current_user)),class:"nav-link" %>
+        <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "Matches", dashboard_path(match: "match"), class:"nav-link" %>
