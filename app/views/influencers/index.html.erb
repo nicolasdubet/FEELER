@@ -25,68 +25,71 @@
   <div class="infsection">
       <div class="infcolumns is-4 is-offset-4">
         <% @influencers.each do |influencer| %>
-          <div class="infcard">
-            <div class="infheader">
-              <div class="infavatar">
-                 <% if influencer.photo.attached? %>
-                   <%= cl_image_tag influencer.photo.key, crop: :fill %>
-                  <% else %>
-                   <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
-                 <% end %>
-              </div>
-              <div class="card-body">
-                  <div class="user-meta has-text-centered">
-                  <h3 class="username"><%= influencer.firstname %> <%= influencer.lastname %></h3>
-                  <h5 class="position"><strong>Nb. of followers:</strong> <br> <%= influencer.number_of_followers %></h5>
-                 <h5 class="position"><strong>Activity</strong> <br> <%= influencer.activity.name %></h5>
-                  </div>
-                <div class="action has-text-centered">
-                  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#influencerModal-<%= influencer.id %>"> More Details </button>
+        
 
-                  <!-- Modal -->
-                  <div class="modal fade" id="influencerModal-<%= influencer.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel"><%= influencer.firstname %> <%= influencer.lastname %></h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                           <div class="row">
-                              <div class="col-5 influencer_summary">
-                                <% if influencer.photo.attached? %>
-                                  <%= cl_image_tag influencer.photo.key, class:"infl_photo_show", width:200, crop: :fill %>
-                                <% else %>
-                                  <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
-                                <% end %>
+          <a href="#influencerModal-<%= influencer.id %>" data-toggle="modal" class="text-decoration-none text-reset">
+            <div class="infcard">
+              <div class="infheader">
+                <div class="infavatar">
+                  <% if influencer.photo.attached? %>
+                    <%= cl_image_tag influencer.photo.key, crop: :fill %>
+                    <% else %>
+                    <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
+                  <% end %>
+                </div>
+                <div class="card-body">
+                    <div class="user-meta has-text-centered">
+                    <h3 class="username"><%= influencer.firstname %> <%= influencer.lastname %></h3>
+                    <h5 class="position"><strong>Nb. of followers:</strong> <br> <%= influencer.number_of_followers %></h5>
+                  <h5 class="position"><strong>Activity</strong> <br> <%= influencer.activity.name %></h5>
+                    </div>
+                  <div class="action has-text-centered">
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="influencerModal-<%= influencer.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"><%= influencer.firstname %> <%= influencer.lastname %></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                                <div class="col-5 influencer_summary">
+                                  <% if influencer.photo.attached? %>
+                                    <%= cl_image_tag influencer.photo.key, class:"infl_photo_show", width:200, crop: :fill %>
+                                  <% else %>
+                                    <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
+                                  <% end %>
 
 
-                                <div class="pseudoshow"><%= influencer.pseudo %></div>
-                                  <i class="fas fa-users"></i>  <%= influencer.number_of_followers %></br>
-                                  <i class="fas fa-globe-europe"></i> <%= influencer.language %> </br>
+                                  <div class="pseudoshow"><%= influencer.pseudo %></div>
+                                    <i class="fas fa-users"></i>  <%= influencer.number_of_followers %></br>
+                                    <i class="fas fa-globe-europe"></i> <%= influencer.language %> </br>
+                                </div>
+
+                                <div class="col-6">
+                                  <i class="fas fa-hashtag"></i> <%= influencer.activity.name %></br>
+
+                                  <%= influencer.bio %>
+                                </div>
                               </div>
-
-                              <div class="col-6">
-                                <i class="fas fa-hashtag"></i> <%= influencer.activity.name %></br>
-
-                                <%= influencer.bio %>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
+                          </div>
+                          <div class="modal-footer">
 
 
-                        <% unless Brand.find_by(user: current_user).campaigns.empty?  %>
-                          <%= form_for(@match) do |f| %>
-                            <%= f.hidden_field :influencer_id, value: influencer.id%>
-                            <%= f.hidden_field :campaign_id, value: Brand.where(user: current_user).first.campaigns.last.id%>
-                            <%= f.submit "❤️", class: "btn btn-success" %>
+                          <% unless Brand.find_by(user: current_user).campaigns.empty?  %>
+                            <%= form_for(@match) do |f| %>
+                              <%= f.hidden_field :influencer_id, value: influencer.id%>
+                              <%= f.hidden_field :campaign_id, value: Brand.where(user: current_user).first.campaigns.last.id%>
+                              <%= f.submit "❤️", class: "btn btn-success" %>
+                            <% end %>
+                          <% else %>
+                            <p>If you want to like this influencers create a campaign</p>
                           <% end %>
-                        <% else %>
-                          <p>If you want to like this influencers create a campaign</p>
-                        <% end %>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -94,7 +97,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         <% end %>
       </div>
   </div>
