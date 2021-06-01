@@ -17,7 +17,7 @@
           <%= link_to "New campaign", new_brand_campaign_path(Brand.find_by(user:current_user)),class:"nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/dashboard">Matches</a>
+          <%= link_to "Matches", dashboard_path(match: "match"), class:"nav-link" %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/influencers">All influencers</a>
