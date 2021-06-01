@@ -53,12 +53,18 @@
 
 <div id="search_infl">
 <%= form_tag influencers_path, method: :get do %>
+  <div class="search_rel">
   <%= text_field_tag :query,
     params[:query],
     class: "form-control string required",
     placeholder: "Find an inlfuencer"
   %>
-  <%= submit_tag "Search", class: "btn btn-flat" %>
+
+
+  <%= button_tag class: "btn btn-default" do %>
+   <i class="fas fa-search"  ></i>
+<%end%>
+ </div>
 <% end %>
 </div>
 

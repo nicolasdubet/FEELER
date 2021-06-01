@@ -1,4 +1,8 @@
-<div class="influencers">
+<div class="header">
+
+
+  </div>
+  <div class="influencers">
   <div class="infbanner" >
     <div class="infcontainer">
         <div class="influenceradvancefilter">
@@ -25,7 +29,7 @@
   <div class="infsection">
       <div class="infcolumns is-4 is-offset-4">
         <% @influencers.each do |influencer| %>
-        
+
 
           <a href="#influencerModal-<%= influencer.id %>" data-toggle="modal" class="text-decoration-none text-reset">
             <div class="infcard">
@@ -44,7 +48,7 @@
                   <h5 class="position"><strong>Activity</strong> <br> <%= influencer.activity.name %></h5>
                     </div>
                   <div class="action has-text-centered">
-                    
+
                     <!-- Modal -->
                     <div class="modal fade" id="influencerModal-<%= influencer.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
