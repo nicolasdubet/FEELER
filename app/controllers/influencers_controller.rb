@@ -16,12 +16,16 @@ class InfluencersController < ApplicationController
         @influencers = @influencers.where(number_of_followers: 1000001..5000000)
       end
     end
-    
+
     if params[:language].present?
       @influencers = @influencers.where(language: params[:language])
     end
     if params[:age].present?
       @influencers = @influencers.where(age: params[:age])
+    end
+
+    if params[:query].present?
+      @influencers = @influencers.where("firstname ILIKE :query OR lastname ILIKE :query OR pseudo ILIKE :query ", query: "%#{params[:query]}%" )
     end
   end
 

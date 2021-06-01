@@ -78,7 +78,7 @@
   position: absolute;
   z-index: 1;
   width: 100%;
-  top: 200px;
+  top: 90px;
   transform: translateY(-50%);
   color:yellow
 }
@@ -91,3 +91,15 @@
   object-fit: cover;
 }
 
+#image_home {
+  top: -201px;
+  position: relative;
+  left: 645px;
+}
+
+#search_infl {
+  width: 400px;
+  top: 50vh;
+  position: absolute;
+  left: 8vw;
+}
