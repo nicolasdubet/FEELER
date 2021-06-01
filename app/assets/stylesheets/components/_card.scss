@@ -8,11 +8,6 @@ $section: #ededed;
 $muted: #999;
 
 .influencers {
-/*   body {
-    position: relative;
-    height: 100%;
-    width: 100%;
-  } */
 
   .infcolumns {
     margin-top: 0;
@@ -38,9 +33,18 @@ $muted: #999;
       background-color: white;
       width: 100%;
       box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.08);
+     
+
+
       .infheader {
         color: darkgray;
+        }
 
+        .infheader :hover {
+          color: darkgray;
+          }
+
+        
         .infavatar {
 
           height: 100%;
@@ -127,8 +131,8 @@ $muted: #999;
     }
   }
 
-}
 
+}
 //--------------END InfluencersIndexCard----------------//
 
 
