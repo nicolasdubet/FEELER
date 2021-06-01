@@ -112,18 +112,18 @@
                     <h5 class="position"><strong>Activity:</strong> <br> <%= match.influencer.activity.name %></h5>
                     <h5 class="position"><strong>Nb. of followers:</strong> <br> <%= match.influencer.number_of_followers %></h5>
                     <h5 class="position"><strong>Campaign Name:</strong> <br><%= match.campaign.name %></h5>
-                    <button class="btn" style="border-color: red; color: red; background-color: none ">Accept</button>
-                    <button class="btn" style="border-color: red; color: red; background-color: none ">Decline</button>
                   </div>
                   <div class="action has-text-centered">
-                    <%= link_to dashboard_path do %>
-                      <button class="btn btn-success btn-margin-top">More Details</button>
+                    <%= link_to accept_path(match: match),
+                      method: :put,
+                      data: { confirm: "Are you sure?" } do %>
+                      <button class="btn btn-success btn-margin-top">Accept</button>
                     <% end %>
-                    <%#= link_to dashboard_path,
-                      method: :delete,
-                      data: { confirm: "Are you sure to delete this match ?" } do %>
-                        <button class="btn" style="border-color: red; color: red; background-color: none ">Delete</button>
-                      <%# end %>
+                    <%= link_to decline_path(match: match),
+                      method: :put,
+                      data: { confirm: "Are you sure?" } do %>
+                      <button class="btn" style="border-color: red; color: red; background-color: none ">Decline</button>
+                    <% end %>
                   </div>
                 </div>
               </div>

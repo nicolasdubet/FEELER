@@ -1,5 +1,4 @@
 class MatchesController < ApplicationController
-
   def create
     @match = Match.new(match_params)
     if current_user.is_influencer?
@@ -11,15 +10,17 @@ class MatchesController < ApplicationController
     redirect_to influencers_path
   end
 
-  # def update
-  #   if @match.update(status: 'influencer like campaign') || @match.update(status: 'brand like influencer')
-  #     @match.update(status: 'both like')
-  #   elsif @match.update(status: 'influencer like campaign')
+  def decline
+    @match = Match.find(params[:match])
+    @match.update(status: "declined")
+    redirect_to dashboard_path
+  end
 
-  #   end
-
-  # end
-
+  def accept
+    @match = Match.find(params[:match])
+    @match.update(status: "Match")
+    redirect_to dashboard_path
+  end
 
   private
 
