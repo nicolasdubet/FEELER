@@ -1,4 +1,5 @@
 class MatchesController < ApplicationController
+
   def create
     @match = Match.new(match_params)
     if current_user.is_influencer?

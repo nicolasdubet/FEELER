@@ -1,44 +1,131 @@
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Campaigns</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Matches</button>
-  </li>
-   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Likes</button>
-  </li>
-</ul>
-
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <div class="pages-container margin-nav">
-      <div class="cards-grid-3">
-        <% if @campaigns.empty? %>
-          <p>There is no campaign yet...</p>
-          <%= link_to dashbord_path do %>
-            <button class="btn btn-success btn-margin-top">Create a campaign</button>
+<% if current_user.is_brand? %>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Campaigns</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#match" type="button" role="tab" aria-controls="match" aria-selected="false">Matches</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#favorite" type="button" role="tab" aria-controls="favorite" aria-selected="false">Favorites</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="pages-container margin-nav">
+        <div class="cards-grid-3">
+          <% if @campaigns.empty? %>
+            <p>There is no campaign yet...</p>
+            <%= link_to new_brand_campaign_path(Brand.find_by(user: current_user)) do %>
+              <button class="btn btn-success btn-margin-top">Create a campaign</button>
+            <% end %>
+          <% else %>
+            <% @campaigns.each do |campaign| %>
+              <div class="card-campaing" id="card-campaign-dashboard">
+                <% if campaign.brand.photo.attached? %>
+                <%= cl_image_tag campaign.brand.photo.key , height: 200, width: 200, crop: :fill%>
+                <% else %>
+                  <%= image_tag "https://images.unsplash.com/photo-1493612276216-ee3925520721?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80", height: 200, width: 200, crop: :fill %>
+                <% end %>
+                <div class="card-campaign-infos">
+                  <p><strong> <%= campaign.name %></strong> </p>
+                    <p>Campaigns Dates:</p>
+                      <p>from <%= campaign.start_date %> to <%= campaign.end_date %></p>
+                    <%= link_to campaigns_path do %>
+                      <button class="btn btn-success btn-margin-top">More details</button>
+                    <% end %>
+                    <%= link_to campaigns_path(campaign),
+                      method: :delete,
+                      data: { confirm: "Are you sure to delete this campaign ?" } do %>
+                      <button class="btn" style="border-color: red; color: red; background-color: none ">Delete</button>
+                    <% end %>
+                </div>
+              </div>
+            <% end %>
           <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="match" role="tabpanel" aria-labelledby="match-tab">
+      <div class="cards-grid-3 mt-3">
+        <% if @campaigns.empty? %>
+        <p>You need to create a campaign</p>
+        <% elsif @matches_mutual.empty? %>
+          <p>There is no match with an influencer yet...</p>
         <% else %>
-          <% @campaigns.each do |campaign| %>
-            <div class="card-campaing" id="card-campaign-dashboard">
-              <% if campaign.brand.photo.attached? %>
-              <%= cl_image_tag campaign.brand.photo.key , height: 200, width: 200, crop: :fill%>
-              <% else %>
-                <%= image_tag "https://images.unsplash.com/photo-1493612276216-ee3925520721?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80", height: 200, width: 200, crop: :fill %>
-              <% end %>
-              <div class="card-campaign-infos">
-                <p><strong> <%= campaign.name %></strong> </p>
-                  <p>Campaigns Dates:</p>
-                    <p>from <%= campaign.start_date %> to <%= campaign.end_date %></p>
-                  <%= link_to campaigns_path do %>
-                    <button class="btn btn-success btn-margin-top">More details</button>
+          <% @matches_mutual.each do |match_id| %>
+            <% match = Match.find(match_id)%>
+            <div class="infcard">
+              <div class="infheader">
+                <div class="infavatar">
+                  <% if match.influencer.photo.attached? %>
+                    <%= cl_image_tag match.influencer.photo.key, width:170, crop: :fill %>
+                  <% else %>
+                    <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
                   <% end %>
-                  <%= link_to campaigns_path(campaign),
-                    method: :delete,
-                    data: { confirm: "Are you sure to delete this campaign ?" } do %>
-                    <button class="btn" style="border-color: red; color: red; background-color: none ">Delete</button>
+                </div>
+                <div class="card-body">
+                  <div class="user-meta has-text-centered">
+                    <h3 class="username"><%= match.influencer.firstname %> <%= match.influencer.lastname %></h3>
+                    <h5 class="position"><strong>Activity:</strong> <br> <%= match.influencer.activity.name %></h5>
+                    <h5 class="position"><strong>Nb. of followers:</strong> <br> <%= match.influencer.number_of_followers %></h5>
+                    <h5 class="position"><strong>Campaign Name:</strong> <br><%= match.campaign.name %></h5>
+                  </div>
+                  <div class="action has-text-centered">
+                    <%= link_to dashboard_path do %>
+                      <button class="btn btn-success btn-margin-top">More Details</button>
+                    <% end %>
+                    <%#= link_to dashboard_path,
+                      method: :delete,
+                      data: { confirm: "Are you sure to delete this match ?" } do %>
+                        <button class="btn" style="border-color: red; color: red; background-color: none ">Delete</button>
+                      <%# end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="favorite" role="tabpanel" aria-labelledby="favorite-tab">
+      <div class="cards-grid-3 mt-3">
+        <% if @campaigns.empty? %>
+          <p>You need to create a campaign</p>
+        <% elsif @matches_pending.empty? %>
+          <p>Any influencer liked already your campaign</p>
+        <% else %>
+          <% @matches_pending.each do |match_id| %>
+            <% match = Match.find(match_id)%>
+            <div class="infcard">
+              <div class="infheader">
+                <div class="infavatar">
+                  <% if match.influencer.photo.attached? %>
+                    <%= cl_image_tag match.influencer.photo.key, width:170, crop: :fill %>
+                  <% else %>
+                    <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
                   <% end %>
+                </div>
+                <div class="card-body">
+                  <div class="user-meta has-text-centered">
+                    <h3 class="username"><%= match.influencer.firstname %> <%= match.influencer.lastname %></h3>
+                    <h5 class="position"><strong>Activity:</strong> <br> <%= match.influencer.activity.name %></h5>
+                    <h5 class="position"><strong>Nb. of followers:</strong> <br> <%= match.influencer.number_of_followers %></h5>
+                    <h5 class="position"><strong>Campaign Name:</strong> <br><%= match.campaign.name %></h5>
+                    <button class="btn" style="border-color: red; color: red; background-color: none ">Accept</button>
+                    <button class="btn" style="border-color: red; color: red; background-color: none ">Decline</button>
+                  </div>
+                  <div class="action has-text-centered">
+                    <%= link_to dashboard_path do %>
+                      <button class="btn btn-success btn-margin-top">More Details</button>
+                    <% end %>
+                    <%#= link_to dashboard_path,
+                      method: :delete,
+                      data: { confirm: "Are you sure to delete this match ?" } do %>
+                        <button class="btn" style="border-color: red; color: red; background-color: none ">Delete</button>
+                      <%# end %>
+                  </div>
+                </div>
               </div>
             </div>
           <% end %>
@@ -46,82 +133,6 @@
       </div>
     </div>
   </div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <div class="cards-grid-3 mt-3">
-      <% if @matches.empty? %>
-        <p>There is no match with an influencer yet...</p>
-      <% else %>
-        <% @influencers.each do |influencer| %>
-          <div class="infcard">
-            <div class="infheader">
-              <div class="infavatar">
-                <% if influencer.photo.attached? %>
-                  <%= cl_image_tag influencer.photo.key, width:170, crop: :fill %>
-                <% else %>
-                  <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
-                <% end %>
-              </div>
-              <div class="card-body">
-                <div class="user-meta has-text-centered">
-                  <h3 class="username"><%= influencer.firstname %> <%= influencer.lastname %></h3>
-                  <h5 class="position"><strong>Activity:</strong> <br> <%= influencer.activity.name %></h5>
-                  <h5 class="position"><strong>Nb. of followers:</strong> <br> <%= influencer.number_of_followers %></h5>
-                  <h5 class="position"><strong>Campaign Name:</strong> <br>Nom de la campagne liké par l'influenceur</h5>
-                </div>
-                <div class="action has-text-centered">
-                  <%= link_to dashboard_path do %>
-                    <button class="btn btn-success btn-margin-top">More Details</button>
-                  <% end %>
-                  <%= link_to influencers_path,
-                    method: :delete,
-                    data: { confirm: "Are you sure to delete this match ?" } do %>
-                      <button class="btn" style="border-color: red; color: red; background-color: none ">Delete</button>
-                    <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <div class="cards-grid-3 mt-3">
-      <% if @matches.empty? %>
-              <p>There is no match with an influencer yet...</p>
-            <% else %>
-            <% @influencers.each do |influencer| %>
-          <div class="infcard">
-            <div class="infheader">
-              <div class="infavatar">
-                <% if influencer.photo.attached? %>
-                  <%= cl_image_tag influencer.photo.key, width:170, crop: :fill %>
-                <% else %>
-                  <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
-                <% end %>
-              </div>
-              <div class="card-body">
-                <div class="user-meta has-text-centered">
-                  <h3 class="username"><%= influencer.firstname %> <%= influencer.lastname %></h3>
-                  <h5 class="position"><strong>Activity:</strong> <br> <%= influencer.activity.name %></h5>
-                  <h5 class="position"><strong>Nb. of followers:</strong> <br> <%= influencer.number_of_followers %></h5>
-                  <h5 class="position"><strong>Campaign Name:</strong> <br>Nom de la campagne liké par l'influenceur</h5>
-                </div>
-                <div class="action has-text-centered">
-                  <%= link_to dashboard_path do %>
-                    <button class="btn btn-success btn-margin-top">Accept</button>
-                  <% end %>
-                  <%= link_to influencers_path,
-                    method: :delete,
-                    data: { confirm: "Are you sure to delete this like ?" } do %>
-                      <button class="btn" style="border-color: red; color: red; background-color: none ">Delete</button>
-                    <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<% else %>
+  <%# dashboard influencer %>
+<% end %>

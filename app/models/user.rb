@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :brands
   has_many :influencers
+  has_many :campaigns, through: :brand
 
   def is_influencer?
     Influencer.where(user: self).present?

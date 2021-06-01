@@ -39,14 +39,10 @@ $muted: #999;
       width: 100%;
       box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.08);
       .infheader {
-      color: darkgray
-        /* height: 120px; */
-        :hover {
-          opacity: 0.7;
-        }
-        
+        color: darkgray;
+
         .infavatar {
-  
+
           height: 100%;
           position: relative;
           margin: 0 auto;

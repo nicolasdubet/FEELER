@@ -39,8 +39,8 @@
                  <h5 class="position"><strong>Activity</strong> <br> <%= influencer.activity.name %></h5>
                   </div>
                 <div class="action has-text-centered">
-                  <button type="button" class="btn btn" data-dismiss="modal"> ❤️ </button>
-                  
+                  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#influencerModal-<%= influencer.id %>"> More Details </button>
+
                   <!-- Modal -->
                   <div class="modal fade" id="influencerModal-<%= influencer.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -75,16 +75,20 @@
                         </div>
                         <div class="modal-footer">
 
-                        <%#= form_for(@match) do |f| %>
-                          <%#= f.hidden_field :influencer_id, value: influencer.id%>
-                          <%#= f.hidden_field :campaign_id, value: Brand.where(user: current_user).first.campaigns.last.id%>
-                          <%#= f.submit "❤️", class: "btn btn-success" %>
-                        <%# end %>
+
+                        <% unless Brand.find_by(user: current_user).campaigns.empty?  %>
+                          <%= form_for(@match) do |f| %>
+                            <%= f.hidden_field :influencer_id, value: influencer.id%>
+                            <%= f.hidden_field :campaign_id, value: Brand.where(user: current_user).first.campaigns.last.id%>
+                            <%= f.submit "❤️", class: "btn btn-success" %>
+                          <% end %>
+                        <% else %>
+                          <p>If you want to like this influencers create a campaign</p>
+                        <% end %>
                         </div>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
