@@ -2,7 +2,7 @@ class CampaignsController < ApplicationController
 
     def index
         @campaigns = Campaign.all
-
+        @brand = current_user.brands.first
     end
 
     def new
