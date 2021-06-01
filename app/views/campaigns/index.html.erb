@@ -1,11 +1,3 @@
-<% if current_user.is_brand? %>
-  <div class="text-center mt-3 mb-1" >
-    <div>
-      <%= link_to "New campaign", new_brand_campaign_path(Brand.find_by(user:current_user)), class:"btn btn-success"%>
-    </div>
-  </div>
-<% end %>
-
 <h1>All campaigns</h1>
 <div class="container">
   <div class="row">

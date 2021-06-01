@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :influencers, only: [:index, :show, :new, :create]
   resources :campaigns, only: :index
   resources :matches, only: [:create, :new, :edit, :update]
-
   get "dashboard", to: "pages#dashboard", as: "dashboard"
+  put "decline", to: "matches#decline", as: "decline"
+  put "accept", to: "matches#accept", as: "accept"
 end
