@@ -2,6 +2,7 @@ class Influencer < ApplicationRecord
   belongs_to :user
   belongs_to :activity
   has_one_attached :photo
+  has_many :matches, dependent: :destroy
 
 
   LANGUAGE = ["english","french","spanish"]
