@@ -19,7 +19,7 @@ class CampaignsController < ApplicationController
   def show
         @campaign = Campaign.find(params[:brand_id])
         @campaign = Campaign.new
-    end
+  end
 
  private
 
@@ -28,6 +28,4 @@ class CampaignsController < ApplicationController
     def campaign_params
         params.require(:campaign).permit(:name, :brief, :country_code, :activity_id, :language, :start_date, :end_date )
     end
-
-
 end
