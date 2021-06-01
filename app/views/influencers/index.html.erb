@@ -1,17 +1,19 @@
 <div class="influencers">
   <div class="infbanner" >
     <div class="infcontainer">
-      <h1>Discover the <strong>right influencer</strong></h1>
-      <h1>that fits <strong>your need</strong></h1>
         <div class="influenceradvancefilter">
+        <h1>Discover the <strong>right influencer</strong></h1>
+         <h1>that fits <strong>your need</strong></h1>
           <%= form_tag influencers_path, method: :get do %>
-            <%= select_tag :number_of_followers,
-            options_for_select(Influencer::FOLLOWERS.collect{|x| [x[:range], x[:id]]}, selected: params[:number_of_followers]),
-            include_blank: "Followers"%>
-            <%= select_tag :language,
-            options_for_select(Influencer::LANGUAGE, selected: params[:language]),
-            include_blank: "Language"%>
-            <%= submit_tag "search", class: "btn btn-light btn-lg btn-block"%>
+            <div class="d-flex">
+              <%= submit_tag "search", class: "btn btn-light btn-lg btn-block"%>
+              <%= select_tag :number_of_followers,
+              options_for_select(Influencer::FOLLOWERS.collect{|x| [x[:range], x[:id]]}, selected: params[:number_of_followers]),
+              include_blank: "Followers"%>
+              <%= select_tag :language,
+              options_for_select(Influencer::LANGUAGE, selected: params[:language]),
+              include_blank: "Language"%>
+            </div>
           <% end %>
         </div>
     </div>

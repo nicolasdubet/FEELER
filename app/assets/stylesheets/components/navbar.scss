@@ -54,13 +54,23 @@ a.nav-link {
 .dropdown-menu a {
     color: #343a40;
     margin: 3px;
-    border-radius: 25px;
+    border-radius: 20px;
+
 }
 
 .dropdown-menu a:hover {
     color: #343a40;
 
 }
+.dropdown-menu{
+  padding: 2px 5px 1px 2px;
+}
+
+.dropdown-menu  {
+    padding: 6px 6px 1px 2px;
+}
 
 
-
+.dropdown-item {
+  border-radius: 12px;
+}
