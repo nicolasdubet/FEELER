@@ -60,6 +60,7 @@
   background-color: darkblue;
   width: 100vw;
   height: 50vh;
+  z-index: -2;
 }
 
 .header:after {
@@ -108,10 +109,18 @@
 .influencers .infsection {
 min-height: 100vh;
 position: relative;
-margin-top: -223px;
+margin-top: -303px;
 padding-top: -57px;
 }
 
 .search_rel {
   position: relative;
+}
+
+#search-home {
+  width: 100%;
+}
+
+#size_b {
+  width: 55%;
 }

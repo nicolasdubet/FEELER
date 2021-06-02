@@ -33,9 +33,26 @@
 
 .back {
     background-color: darkblue;
+    padding-bottom: 50px;
 }
 
 #image_new {
     bottom: 0;
     right: 0
+}
+
+.btn-search {
+  height: 40px;
+  background-color: blue;
+  border: 2px solid white;
+  color: white;
+}
+#btn_right {
+  float: right;
+}
+
+.grid-infl {
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  display: inline-grid;
+  grid-gap: 1em;
 }
