@@ -185,6 +185,10 @@ $muted: #999;
   margin: 16px;
   box-shadow: 0 0 15px rgba(0,0,0,0.04);
   border-radius: 10px;
+  justify-content: space-between;
+  .flexleft {
+    display: flex;
+  }
   .card-campaign-infos{
     margin-left: 50px;
     margin-top: 36px;
