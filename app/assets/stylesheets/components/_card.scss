@@ -138,8 +138,6 @@ $muted: #999;
 
 
 
-
-
 .card-campaign {
   overflow: hidden;
   background: white;
@@ -179,18 +177,64 @@ $muted: #999;
   grid-gap: 16px;
 }
 
+//--------------START DashboardCampaignCard----------------//
 
 #card-campaign-dashboard{
   display: flex;
   background-color: white;
   margin: 16px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.04);
+  border-radius: 10px;
   .card-campaign-infos{
     margin-left: 50px;
-    margin-top: 18px;
+    margin-top: 36px;
+    h4 {
+      color: black;
+      font-size: 32px;
+      font-weight: bolder;
+    }
+    h6 {
+      color: #2940d3;
+      font-weight: bold;
+
+    }
+    p {
+      color: #2940d3;
+      font-size: 10px;
+    }
+  }
+  .campbuttflex {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 27px;
+  margin-left: 239px;
+    .btn {
+      margin-right: 10px;
+      height: 46px;
+    }
   }
 }
 
+.style_image {
+  border-radius: 10px;
+}
+.hashtagcampinfo {
+  display: flex;
+  .htag {
+    color: #2940d3;
+    background-color: #ebedf9;
+    border-radius: 10px;
+    height: 28px;
+    width: 78px;
+    text-align: center;
+  }
+}
+
+#htag1 {
+  margin-left: 20px;
+}
+
+//--------------END DashboardCampaignCard----------------//
 .username {
 text-align: center;
 color: black;
