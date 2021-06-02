@@ -33,6 +33,7 @@
 
 .back {
     background-color: darkblue;
+    padding-bottom: 50px;
 }
 
 #image_new {
@@ -44,9 +45,13 @@
   width: 55%;
 }
 
+
 .btn-search {
   height: 40px;
   background-color: blue;
   border: 2px solid white;
   color: white;
+}
+#btn_right {
+  float: right;
 }
