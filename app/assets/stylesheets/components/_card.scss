@@ -7,7 +7,7 @@ $secondary: #00D1B2;
 $section: #ededed;
 $muted: #999;
 
-.influencers {
+.influencers,.matches {
 
   .infcolumns {
     margin-top: 0;
@@ -33,7 +33,7 @@ $muted: #999;
       background-color: white;
       width: 100%;
       box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.08);
-     
+
 
 
       .infheader {
@@ -44,7 +44,7 @@ $muted: #999;
           color: darkgray;
           }
 
-        
+
         .infavatar {
 
           height: 100%;
@@ -62,7 +62,7 @@ $muted: #999;
             width: 150px;
             object-fit: cover;
           }
-        
+
       }
       .card-body {
         padding: 27px;
