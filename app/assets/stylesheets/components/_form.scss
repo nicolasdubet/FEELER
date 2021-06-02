@@ -49,13 +49,18 @@
 }
 #btn_right {
   float: right;
+
+}
+
+#new_campaign {
+margin-bottom: 80px;
+}
+
+label {
+  color:aliceblue
 }
 
 
-#new_campaign label {
-
-  display: none;
-}
 
 .grid-infl {
   grid-template-columns: 3fr 1fr 1fr 1fr;
