@@ -1,13 +1,13 @@
 <div class="back position-relative" >
     <div class="forms">
         <%= simple_form_for [@brand, @campaign] do |f| %>
-        <%= f.input :name, placeholder: "name" %>
-        <%= f.input :brief, placeholder: "describe your brief" %>
-        <%= f.input :country_code, label:"Country" %>
+        <%= f.input :name, placeholder: "nike" %>
+        <%= f.input :brief, placeholder: "looking for an new influencer" %>
+        <%= f.input :country_code, label:"Cote d'ivoire" %>
         <%= f.association :activity %>
-        <%= f.input :language, placeholder: "language" %>
-        <%= f.input :start_date, placeholder: "choose date" %>
-        <%= f.input :end_date, placeholder: "choose a date" %>
+        <%= f.input :language, placeholder: "anglais" %>
+        <%= f.input :start_date, placeholder: "choose a date" %>
+        <%= f.input :end_date, placeholder: "Choose a date" %>
         <%= f.submit "New campaign",id:"btn_right", class: "btn btn-primary"  %>
         <% end %>
     </div>
