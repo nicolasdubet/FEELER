@@ -45,7 +45,7 @@
                     <h6> From <%= campaign.start_date.strftime("%B %d") %> to <%= campaign.end_date.strftime("%B %d %Y") %></h6>
                     <h4><%= campaign.name %></h4>
                     <div class="hashtagcampinfo">
-                      <div class="htag"><%= campaign.activity.name%></div> 
+                      <div class="htag"><%= campaign.activity.name%></div>
                       <div class="htag" id="htag1"><%= campaign.language %></div>
                     </div>
                   </div>
@@ -93,8 +93,8 @@
                       <div class="user-meta has-text-centered">
                         <h3 class="username"><%= match.influencer.firstname %> <%= match.influencer.lastname %></h3>
                         <h5 class="position"><strong>Activity:</strong> <br> <%= match.influencer.activity.name %></h5>
-                        <h5 class="position"><strong>Nb. of followers:</strong> <br> <%= match.influencer.number_of_followers %></h5>
-                        <h5 class="position"><strong>Instered by:</strong> <br><%= match.campaign.name %></h5>
+                        <h5 class="position"><strong>Followers:</strong> <br> <%= match.influencer.number_of_followers %></h5>
+                        <h5 class="position"><strong>Interested by:</strong> <br><%= match.campaign.name %></h5>
                       </div>
                     </div>
                   </div>
