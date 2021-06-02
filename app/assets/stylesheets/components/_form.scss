@@ -33,6 +33,7 @@
 
 .back {
     background-color: darkblue;
+    padding-bottom: 50px;
 }
 
 #image_new {
@@ -42,4 +43,8 @@
 
 .form-control {
   width: 55%;
+}
+
+#btn_right {
+  float: right;
 }
