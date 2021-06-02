@@ -44,7 +44,7 @@
                   <h6> From <%= campaign.start_date.strftime("%B %d") %> to <%= campaign.end_date.strftime("%B %d %Y") %></h6>
                   <h4><%= campaign.name %></h4>
                   <div class="hashtagcampinfo">
-                    <div class="htag"><%= campaign.activity.name%></div> 
+                    <div class="htag"><%= campaign.activity.name%></div>
                     <div class="htag" id="htag1"><%= campaign.language %></div>
                   </div>
                 </div>
@@ -152,6 +152,7 @@
       </div>
     </div>
   </div>
+</div>
 <% else %>
   <%# dashboard influencer %>
 <% end %>
