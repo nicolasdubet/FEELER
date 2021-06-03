@@ -4,7 +4,7 @@
 <div class="influencers">
     <div class="infbanner" >
       <div class="infcontainer">
-          <div class="influenceradvancefilter">
+        <div class="influenceradvancefilter">
           <h1>Discover the <strong>right influencer</strong></h1>
           <h1>that fits <strong>your need</strong></h1>
             <%= form_tag influencers_path, method: :get do %>
@@ -21,8 +21,8 @@
                 include_blank: "Language"%>
                 <%= submit_tag "SEARCH", class: "btn btn-light btn-search"%>
               </div>
-            <% end %>
-          </div>
+             <% end %>
+        </div>
           <%= button_tag class: "btn btn-default" do %>
           <i class="fas fa-search"  ></i>
       </div>
@@ -46,17 +46,18 @@
                   <% end %>
                 </div>
                 <div class="card-body">
-                    <div class="user-meta has-text-centered">
+                    <div class="user-meta has-text-centered" style="display:flex; flex-direction: column; align-items: center;">
                       <h3 class="username"><%= influencer.firstname %> <%= influencer.lastname %></h3>
                       <h5 class="position"><%= image_tag "instagram.png" %> <%= number_with_delimiter(influencer.number_of_followers, delimiter: " ") %></h5>
-                      <div id="infl-activity"><h5 class="position" style="
-                        background-color: #ebedf9;
-                        border-radius: 10px;
-                        padding-top: 7px;
-                        padding-bottom: 7px;
-                        padding: 7px 20px;
-                        display: inline-block;
-                        text-align: -webkit-right;">
+                      <div id="infl-activity" style="
+                            background-color: #ebedf9;
+                            border-radius: 10px;
+                            padding-top: 7px;
+                            padding-bottom: 0px;
+                            padding: 7px 20px;
+                            display: inline-block;
+                            text-align: center;">
+                            <h5 class="hashtagcampinfo htag">
                         <i class="fas fa-hashtag"></i><%= influencer.activity.name %></h5>
                       </div>
                     </div>
