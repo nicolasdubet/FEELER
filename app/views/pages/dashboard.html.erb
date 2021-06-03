@@ -97,14 +97,7 @@
                     <div class="card-body">
                       <div class="user-meta has-text-centered">
                         <h3 class="username"><%= match.influencer.firstname %> <%= match.influencer.lastname %></h3>
-                        <h5 class="position" style="
-                        background-color: #ebedf9;
-                        border-radius: 10px;
-                        padding-top: 7px;
-                        padding-bottom: 7px;
-                        padding: 7px 20px;
-                        display: inline-block;
-                        text-align: -webkit-right;">
+                        <h5 class="position tag">
                         <i class="fas fa-hashtag"></i>
                         <%= match.influencer.activity.name %></h5>
                         <h5 class="position"><%= image_tag "instagram.png" %> <%= number_with_delimiter(match.influencer.number_of_followers, delimiter: " ") %></h5>
