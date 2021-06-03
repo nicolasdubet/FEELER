@@ -3,15 +3,15 @@
   overflow: hidden;
 }
 
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-item.show .nav-link {
+.dashboard{
+  .nav-link.active{
   color:white;
   background: $red;
-  border: none;
-}
-.dashboard{
+  }
+  .nav-link{
   color:$red;
   background: white;
+  }
 }
 
 #flexzone {
