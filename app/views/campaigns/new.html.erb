@@ -3,8 +3,8 @@
         <%= simple_form_for [@brand, @campaign] do |f| %>
         <%= f.input :name, placeholder: "nike", label:"Enter the name of your campaign" %>
         <%= f.input :brief, placeholder: "looking for a new influencer?", label:"Enter your brief"%>
-        <%= f.input :country_code, label:"Choose a country" %>
-        <%= f.association :activity %>
+        <%= f.input :country_code, label:"Select a country" %>
+        <%= f.association :activity, label:"Select an activity" %>
         <%= f.input :language, placeholder: "english", label:"choose the language of the campaign" %>
         <%= f.input :start_date, as: :string, input_html: {class:"datepicker"} %>
         <%= f.input :end_date,as: :string, input_html: {class:"datepicker"} %>
