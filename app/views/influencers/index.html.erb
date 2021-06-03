@@ -91,7 +91,7 @@
                       <div class="tagshowinfo">
                         <i class="fas fa-globe-europe"></i><div class="n"><%= influencer.language %></div>
                         <i class="fas fa-hashtag"></i><div class="n1"><%= influencer.activity.name %></div>
-                        <i class="position"><%= image_tag "instagram.png" %></i><div class="n"><%= influencer.number_of_followers %></div>
+                        <i class="position"><%= image_tag "instagram.png" %></i><div class="n"><%= number_with_delimiter(influencer.number_of_followers, delimiter: " ") %></div>
                       </div>
                       <%= influencer.bio %>
                     </div>
