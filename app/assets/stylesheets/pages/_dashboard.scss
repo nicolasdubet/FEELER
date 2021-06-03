@@ -1,6 +1,10 @@
 #myTab {
   border-radius: 40px;
   overflow: hidden;
+  button{
+    color:$red;
+    background: white;
+  }
 }
 
 .nav-tabs .nav-link.active,
@@ -8,10 +12,6 @@
   color:white;
   background: $red;
   border: none;
-}
-.dashboard{
-  color:$red;
-  background: white;
 }
 
 #flexzone {
@@ -35,3 +35,5 @@
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
 }
+
+
