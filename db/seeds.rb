@@ -63,13 +63,13 @@ influencer1 = Influencer.new(
     age: 21,
     sex: "male",
     activity_id: act11.id,
-    user_id: user4.id,
+    user_id: user2.id,
     bio: "Hola ! Juego al fútbol en Mataró en Cataluña. Mis seguidores son principalmente de Cataluña. Si necesita usted un hombre de influencia para esta región llámame."
     )
     file = URI.open("https://images.unsplash.com/photo-1420316078344-6149cb82b2c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80")
     influencer1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer1.save!
-    
+
 puts "done"
 
 
@@ -90,7 +90,7 @@ influencer2 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1616773589004-479837c23a23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80")
     influencer2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer2.save!
-    
+
 puts "done"
 
 
@@ -111,7 +111,7 @@ influencer3 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1551644480-685dae9e21a9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80")
     influencer3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer3.save!
-    
+
 puts "done"
 
 puts "create #4 influencer..."
@@ -131,7 +131,7 @@ influencer4 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1593937799405-f5da790f5b04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80")
     influencer4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer4.save!
-    
+
 puts "done"
 
 
@@ -174,7 +174,7 @@ influencer6 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1603727016411-92957840b9d1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")
     influencer6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer6.save!
-    
+
 puts "done"
 
 puts "create #7 influencer..."
@@ -194,7 +194,7 @@ influencer7 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1595886161303-809833f69299?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=401&q=80")
     influencer7.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer7.save!
-    
+
 puts "done"
 
 
@@ -237,7 +237,7 @@ influencer9 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1592253555273-59dc3dcbe9b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80")
     influencer9.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer9.save!
-    
+
 puts "done"
 
 puts "create #10 influencer..."
@@ -257,7 +257,7 @@ influencer10 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1505515512423-7f370c79c5ef?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80")
     influencer10.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer10.save!
-    
+
 puts "done"
 
 puts "create #11 influencer..."
@@ -277,7 +277,7 @@ influencer11 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1618164362963-0aebeb718a7f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")
     influencer11.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer11.save!
-    
+
 puts "done"
 
 puts "create #12 influencer..."
@@ -297,7 +297,7 @@ influencer12 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1570026739870-363fecf33986?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")
     influencer12.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer12.save!
-    
+
 puts "done"
 
 puts "create #13 influencer..."
@@ -317,7 +317,7 @@ influencer13 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")
     influencer13.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer13.save!
-    
+
 puts "done"
 
 puts "create #14 influencer..."
@@ -337,7 +337,7 @@ influencer14 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1590101084993-edc848651c61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80")
     influencer14.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer14.save!
-    
+
 puts "done"
 
 puts "create #15 influencer..."
@@ -357,7 +357,7 @@ influencer15 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1548611535-b3716767c3d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")
     influencer15.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer15.save!
-    
+
 puts "done"
 
 
@@ -378,7 +378,7 @@ influencer16 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1610389051254-64849803c8fd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80")
     influencer16.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer16.save!
-    
+
 puts "done"
 
 puts "create #17 influencer..."
@@ -398,7 +398,7 @@ influencer17 = Influencer.new(
     file = URI.open("https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80")
     influencer17.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     influencer17.save!
-    
+
 puts "done"
 
 

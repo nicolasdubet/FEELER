@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def dashboard
     # Trouver qui il est
+
     if current_user.is_brand?
       @brand = Brand.find_by(user: current_user)
       @campaigns = Campaign.where(brand: @brand)
