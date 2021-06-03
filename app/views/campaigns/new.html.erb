@@ -1,14 +1,14 @@
 <div class="back position-relative" >
     <div class="forms">
         <%= simple_form_for [@brand, @campaign] do |f| %>
-        <%= f.input :name, placeholder: "nike" %>
-        <%= f.input :brief, placeholder: "looking for a new influencer" %>
-        <%= f.input :country_code, label:"Country" %>
+        <%= f.input :name, placeholder: "nike", label:"Enter the name of your campaign" %>
+        <%= f.input :brief, placeholder: "looking for a new influencer?", label:"Enter your brief"%>
+        <%= f.input :country_code, label:"Choose a country" %>
         <%= f.association :activity %>
-        <%= f.input :language, placeholder: "english" %>
+        <%= f.input :language, placeholder: "english", label:"choose the language of the campaign" %>
         <%= f.input :start_date, as: :string, input_html: {class:"datepicker"} %>
         <%= f.input :end_date,as: :string, input_html: {class:"datepicker"} %>
-        <%= f.submit "New campaign",id:"btn_right", class: "btn btn-primary"  %>
+        <%= f.submit "Launch a campaign",id:"btn_right", class: "btn"  %>
         <% end %>
     </div>
     <%= image_tag "Saly-24.png", id:"image_new", class:"position-absolute"%>

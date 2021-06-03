@@ -47,10 +47,6 @@
   border: 2px solid white;
   color: white;
 }
-#btn_right {
-  float: right;
-
-}
 
 #new_campaign {
 margin-bottom: 80px;
@@ -66,5 +62,19 @@ label {
   grid-template-columns: 3fr 1fr 1fr 1fr;
   display: inline-grid;
   grid-gap: 1em;
+}
+
+.back {
+  padding-top: 40px;
+}
+
+#btn_right {
+  float: right;
+  background: rgba(228, 1, 115, 1);
+  color: white;
+  opacity: 0.7;
+   &:hover  {
+    opacity: 1;
+  }
 }
 

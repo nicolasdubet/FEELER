@@ -20,9 +20,9 @@ class InfluencersController < ApplicationController
     if params[:language].present?
       @influencers = @influencers.where(language: params[:language])
     end
-    if params[:age].present?
-      @influencers = @influencers.where(age: params[:age])
-    end
+    #if params[:activity].present?
+     # @influencers = @influencers.where(activity: params[:activity_id])
+    #end
 
     if params[:query].present?
       @influencers = @influencers.where("firstname ILIKE :query OR lastname ILIKE :query OR pseudo ILIKE :query ", query: "%#{params[:query]}%" )
