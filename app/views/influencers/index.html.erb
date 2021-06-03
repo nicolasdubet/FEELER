@@ -48,7 +48,7 @@
                 <div class="card-body">
                     <div class="user-meta has-text-centered">
                       <h3 class="username"><%= influencer.firstname %> <%= influencer.lastname %></h3>
-                      <h5 class="position"><strong>Followers:</strong> <br> <%= influencer.number_of_followers %></h5>
+                      <h5 class="position"><strong>Followers:</strong> <br> <%= number_with_delimiter(influencer.number_of_followers, delimiter: " ") %></h5>
                       <h5 class="position"><strong>Activity</strong> <br> <%= influencer.activity.name %></h5>
                     </div>
                 </div>

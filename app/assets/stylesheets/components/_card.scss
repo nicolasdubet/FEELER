@@ -33,16 +33,15 @@ $muted: #999;
       background-color: white;
       width: 100%;
       box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.08);
-
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+      }
 
 
       .infheader {
         color: darkgray;
         }
-
-        .infheader :hover {
-          color: darkgray;
-          }
 
 
         .infavatar {
@@ -66,7 +65,6 @@ $muted: #999;
       }
       .card-body {
         padding: 27px;
-        background-color: white;
         .user-meta {
           padding-top: 20px;
           .username {
