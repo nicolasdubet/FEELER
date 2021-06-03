@@ -28,7 +28,7 @@ $muted: #999;
       border-radius: 45px;
       overflow:hidden;
       max-width: 300px;
-      max-height: 380px;
+      max-height: 420px;
       margin: 0 auto;
       background-color: white;
       width: 100%;
@@ -52,6 +52,7 @@ $muted: #999;
           padding-top: 10px;
           display: flex;
           justify-content: center;
+          text-align: center;
 
           img {
             display: block;
@@ -67,6 +68,9 @@ $muted: #999;
         padding: 27px;
         .user-meta {
           padding-top: 1px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           .username {
             font-size: 18px;
             font-weight: 600;
@@ -229,6 +233,8 @@ $muted: #999;
     height: 28px;
     width: 100%;
     text-align: center;
+    margin-bottom: -4px;
+
   }
 }
 
