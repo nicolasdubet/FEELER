@@ -47,10 +47,6 @@
   border: 2px solid white;
   color: white;
 }
-#btn_right {
-  float: right;
-
-}
 
 #new_campaign {
 margin-bottom: 80px;
@@ -73,14 +69,12 @@ label {
 }
 
 #btn_right {
-  background: rgba(228, 1, 115, 1)
-  
-}
-
-
-
-#btn_right :hover {
-  opacity: 1;
-
+  float: right;
+  background: rgba(228, 1, 115, 1);
+  color: white;
+  opacity: 0.7;
+   &:hover  {
+    opacity: 1;
+  }
 }
 

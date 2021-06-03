@@ -97,12 +97,12 @@
                     </div>
                   </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer" style="border-top: none">
                   <% unless Brand.find_by(user: current_user).campaigns.empty?  %>
                     <%= simple_form_for(@match, method: :post) do |f| %>
                       <%= f.hidden_field :influencer_id, value: influencer.id%>
                       <%= f.hidden_field :campaign_id, value: Brand.where(user: current_user).first.campaigns.last.id%>
-                      <%= f.submit "❤", class: "btn btn-success" %>
+                      <%= f.submit "❤ Match", id: "btn_right", class: "btn" %>
                     <% end %>
                   <% else %>
                     <p>If you want to like this influencer, you have to create a campaign</p>
