@@ -79,6 +79,13 @@ $muted: #999;
             font-size: 90%;
             color: $muted;
           }
+          .tag {
+            background-color: #ebedf9;
+            border-radius: 10px;
+            padding: 7px 20px;
+            display: inline-block;
+            text-align: center;
+          }
         }
       }
       .user-bio {
@@ -233,8 +240,7 @@ $muted: #999;
     height: 28px;
     width: 100%;
     text-align: center;
-    margin-bottom: -4px;
-
+    margin-bottom: 0px;
   }
 }
 
@@ -248,6 +254,6 @@ text-align: center;
 color: black;
 }
 
-.position {
-text-align: center;
-}
+
+
+
