@@ -1,10 +1,14 @@
-<% if current_user.is_brand? %>
+<div class="header-dashboard">
+  <h1><strong>My dashboard</strong></h1>
+</div>
+
+<div class="position-relative justify-content-center d-flex" id="flexzone">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <% if params[:match].present? %>
-      <li class="nav-item" role="presentation">
+      <li class="nav-item" id="dashboard" role="presentation">
         <button class="nav-link" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Campaigns</button>
       </li>
-      <li class="nav-item" role="presentation">
+      <li class="nav-item"  role="presentation">
         <button class="nav-link active" id="profile-tab" data-toggle="tab" data-target="#match" type="button" role="tab" aria-controls="match" aria-selected="false">Matches</button>
       </li>
     <% else %>
@@ -20,6 +24,7 @@
       <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#favorite" type="button" role="tab" aria-controls="favorite" aria-selected="false">Favorites</button>
     </li>
   </ul>
+  </div>
   <div class="tab-content" id="myTabContent">
     <% if params[:match].present? %>
       <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -155,6 +160,4 @@
     </div>
   </div>
 </div>
-<% else %>
-  <%# dashboard influencer %>
-<% end %>
+
