@@ -1,7 +1,7 @@
 class InfluencersController < ApplicationController
   def index
     @match = Match.new
-    @influencers = Influencer.all
+    @influencers = Influencer.all.order(:id)
 
     if params[:number_of_followers].present?
       if params[:number_of_followers].to_i == 1

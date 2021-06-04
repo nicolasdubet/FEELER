@@ -27,6 +27,6 @@ class CampaignsController < ApplicationController
 
 
     def campaign_params
-        params.require(:campaign).permit(:name, :brief, :country_code, :activity_id, :language, :start_date, :end_date )
+        params.require(:campaign).permit(:name, :brief, :country_code, :activity_id, :language, :start_date, :end_date, :photo)
     end
 end

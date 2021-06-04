@@ -3,6 +3,7 @@ class Campaign < ApplicationRecord
   belongs_to :brand
   has_many :matches, dependent: :destroy
   has_one :user, through: :brand
+  has_one_attached :photo
 
   validates :name, presence: true
   validates :brief, presence: true

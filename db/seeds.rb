@@ -49,7 +49,10 @@ act12 = Activity.create!(name: "Tech", domain: "tech")
 act13 = Activity.create!(name: "Tourism", domain: "hotel")
 
 puts "create #1 campaign..."
-camp1 = Campaign.create!(name: "Street Soccer Tournaments", brief:"We are looking for an influencer passionated by soccer with a good sense of lifestyle for a couple of events during a month.", country_code: "United Kingdom", activity: act11 , brand: brand1, language: "english", start_date: DateTime.now - 2.month , end_date: DateTime.now - 1.month)
+camp1 = Campaign.new(name: "Street Soccer Tournaments", brief:"We are looking for an influencer passionated by soccer with a good sense of lifestyle for a couple of events during a month.", country_code: "United Kingdom", activity: act11 , brand: brand1, language: "english", start_date: DateTime.now - 2.month , end_date: DateTime.now - 1.month)
+file = URI.open("https://images.unsplash.com/photo-1587329310686-91414b8e3cb7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80")
+camp1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+camp1.save!
 
 
 puts "create #1 influencer..."
