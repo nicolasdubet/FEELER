@@ -102,6 +102,8 @@
                         <%= match.influencer.activity.name %></h5>
                         <h5 class="position"><%= image_tag "instagram.png" %> <%= number_with_delimiter(match.influencer.number_of_followers, delimiter: " ") %></h5>
                         <h5 class="position"><strong>Interested by:</strong> <br><%= match.campaign.name %></h5>
+                        <p class="position tag">
+                        <i class="fas fa-phone"></i> +44 7911 1234</p>
                       </div>
                     </div>
                   </div>
@@ -152,7 +154,7 @@
                          <%= match.influencer.activity.name %></h5>
                         <h5 class="position">
                         <%= image_tag "instagram.png" %>  <%= number_with_delimiter(match.influencer.number_of_followers, delimiter: " ") %></h5>
-                        <h5 class="position"><strong>Campaign Name:</strong> <br><%= match.campaign.name %></h5>
+                        <h5 class="position" id="cocorico"><strong>Campaign Name:</strong> <br><%= match.campaign.name%></h5>
                       </div>
                       <div class="action text-center">
                         <%= link_to accept_path(match: match),
