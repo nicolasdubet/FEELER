@@ -1,6 +1,5 @@
 // Specific CSS for your home-page
 
-
 .btn-succes {
   color: white;
   padding: 8px 24px;
@@ -10,7 +9,6 @@
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
   margin: 30px;
-
 }
 
 .btn-succes:hover {
@@ -23,7 +21,7 @@
   background-position: center;
   padding: 150px 0;
   text-align: center;
-  height: 500px
+  height: 500px;
 }
 
 .banner h1 {
@@ -58,19 +56,19 @@
 .header {
   position: relative;
   background-color: darkblue;
-  width: 100vw;
+  width: 100%;
   height: 50vh;
   z-index: -2;
 }
 
 .header:after {
-    content: "";
-    height: 90px;
-    left: 0;
-    bottom: -90px;
-    right: 0;
-    position: absolute;
-    background-image: linear-gradient(357deg, white 49%, darkblue 50%);
+  content: "";
+  height: 90px;
+  left: 0;
+  bottom: -90px;
+  right: 0;
+  position: absolute;
+  background-image: linear-gradient(357deg, white 49%, darkblue 50%);
 }
 
 
@@ -81,26 +79,26 @@
   width: 100%;
   top: 90px;
   transform: translateY(-50%);
-  color:white
+  color:white;
 }
 
 
 
 #carouselExampleIndicators img {
-
   max-height: 400px;
   object-fit: cover;
 }
 
 #image_home {
-  top: -100px;
-position: relative;
-left: 645px;
+  display: flex;
+  justify-content: flex-end;
+  top: -93px;
+  position: relative;
+  padding-right: 70px;
 }
 
 #image_home img {
   width: 380px;
-
 }
 
 #search_infl {
@@ -112,10 +110,10 @@ left: 645px;
 
 
 .influencers .infsection {
-min-height: 100vh;
-position: relative;
-margin-top: -303px;
-padding-top: -57px;
+  min-height: 100vh;
+  position: relative;
+  margin-top: -303px;
+  padding-top: -57px;
 }
 
 .search_rel {
